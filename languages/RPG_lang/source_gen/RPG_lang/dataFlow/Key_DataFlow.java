@@ -7,7 +7,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 
 public class Key_DataFlow extends DataFlowBuilder {
   public void build(final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitNop("r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5997944521777652259");
-    _context.getBuilder().emitWrite(_context.getNode(), "r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5997944521777351100");
+    _context.getBuilder().emitWrite(_context.getNode(), "r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5066599508442215101");
   }
 }

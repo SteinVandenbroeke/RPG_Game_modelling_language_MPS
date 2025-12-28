@@ -9,11 +9,12 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlow;
+import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
+import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachabilityAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import jetbrains.mps.lang.dataFlow.framework.VarSet;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
@@ -27,9 +28,10 @@ public class check_liveness_NonTypesystemRule extends AbstractNonTypesystemRule_
   public void applyRule(final SNode world, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Program p = DataFlow.buildProgram(world);
 
+    AnalysisResult<Boolean> reachable = p.analyze(new ReachabilityAnalyzer());
     // Unused code
     for (Instruction i : p.getInstructions()) {
-      if (i.getSource() != null) {
+      if (i.getSource() != null && !(reachable.get(i))) {
         {
           final MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning((SNode) i.getSource(), "Unreachable code", "r:1b54dadd-398e-4254-ac29-ec742eb7d95f(RPG_lang.typesystem)", "5997944521777037876", null, errorTarget);

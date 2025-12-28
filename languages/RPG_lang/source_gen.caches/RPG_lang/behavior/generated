@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-bci0ejg21qc6h7v08esgbq38ne3iscy">
-  <files names="BehaviorAspectDescriptor.java:Grid__BehaviorDescriptor.java:Tile__BehaviorDescriptor.java:World__BehaviorDescriptor.java" />
+<product version="3" modelHash="-fc3j81bfsovkw8mqwkij5zkx2xhhr2">
+  <files names="BehaviorAspectDescriptor.java:DoorTile__BehaviorDescriptor.java:Grid__BehaviorDescriptor.java:StandardTile__BehaviorDescriptor.java:Tile__BehaviorDescriptor.java:World__BehaviorDescriptor.java" />
 </product>
 

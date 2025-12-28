@@ -22,28 +22,19 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public final class World__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4eb00L, "RPG_lang.structure.World");
 
-  /*package*/ static final SMethod<List<SNode>> getDirectNeighbors_id5cWYGer8wby = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getDirectNeighbors").modifiers(0, AccessPrivileges.PRIVATE).concept(CONCEPT).baseMethodId(5997944521778922210L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  /*package*/ static final SMethod<List<SNode>> getDoorLinkedNeighbors_id5cWYGer8wd1 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getDoorLinkedNeighbors").modifiers(0, AccessPrivileges.PRIVATE).concept(CONCEPT).baseMethodId(5997944521778922305L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<List<SNode>> getAllNeighbors_id5cWYGer8wdR = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAllNeighbors").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(5997944521778922359L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getDoorLinkedNeighbors_id5cWYGer8wd1 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getDoorLinkedNeighbors").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(5997944521778922305L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getAllTiles_id4pgbmyJbF4F = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAllTiles").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(5066599508430729515L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDirectNeighbors_id5cWYGer8wby, getDoorLinkedNeighbors_id5cWYGer8wd1, getAllNeighbors_id5cWYGer8wdR);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDoorLinkedNeighbors_id5cWYGer8wd1, getAllTiles_id4pgbmyJbF4F);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static List<SNode> getDirectNeighbors_id5cWYGer8wby(@NotNull SNode __thisNode__, SNode tile) {
-    /*
-      Returns a list of the tiles in following format [tile above, tile left, tile right, tile below]
-
-    */
-
-    SNode grid = (SNode) SNodeOperations.getParent(tile);
-    return Grid__BehaviorDescriptor.getDirectNeighbors_id5cWYGer5Gm7.invoke(grid, tile);
-  }
   /*package*/ static List<SNode> getDoorLinkedNeighbors_id5cWYGer8wd1(@NotNull SNode __thisNode__, SNode tile) {
     /*
       Returns a list that contains the tile where the door connects to
@@ -58,29 +49,20 @@ public final class World__BehaviorDescriptor extends BaseBHDescriptor {
     ListSequence.fromList(doorNeighbors).addElement(SLinkOperations.getTarget(doorTile, LINKS.to_door$Lj_Q));
     return doorNeighbors;
   }
-  /*package*/ static List<SNode> getAllNeighbors_id5cWYGer8wdR(@NotNull SNode __thisNode__, SNode startTile) {
+  /*package*/ static List<SNode> getAllTiles_id4pgbmyJbF4F(@NotNull SNode __thisNode__) {
     /*
       Returns a list of all neighboring tiles in an reachable order in BST order, from this tile
 
     */
 
-    List<SNode> allNeighbors = ListSequence.fromList(new ArrayList<SNode>());
-    List<SNode> todoNeighbors = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(todoNeighbors).addElement(startTile);
+    List<SNode> allTiles = ListSequence.fromList(new ArrayList<SNode>());
 
-    while (!(todoNeighbors.isEmpty())) {
-      SNode processingNeighbor = ListSequence.fromList(todoNeighbors).first();
-      allNeighbors.add(processingNeighbor);
-
-      List<SNode> neighbors = World__BehaviorDescriptor.getDirectNeighbors_id5cWYGer8wby.invoke(__thisNode__, processingNeighbor);
-      ListSequence.fromList(neighbors).addSequence(ListSequence.fromList(World__BehaviorDescriptor.getDoorLinkedNeighbors_id5cWYGer8wd1.invoke(__thisNode__, processingNeighbor)));
-      ListSequence.fromList(neighbors).removeSequence(ListSequence.fromList(allNeighbors));
-      ListSequence.fromList(todoNeighbors).removeWhere((it) -> it == null);
-      ListSequence.fromList(todoNeighbors).addSequence(ListSequence.fromList(neighbors));
-
-      ListSequence.fromList(todoNeighbors).removeElementAt(0);
+    for (SNode level : SLinkOperations.getChildren(__thisNode__, LINKS.levels$yhqr)) {
+      ListSequence.fromList(allTiles).addSequence(ListSequence.fromList(Grid__BehaviorDescriptor.getAllTiles_id4pgbmyJgGQW.invoke(SLinkOperations.getTarget(level, LINKS.grid$OnUt))));
     }
-    return allNeighbors;
+    ListSequence.fromList(allTiles).removeWhere((it) -> it == null);
+
+    return allTiles;
   }
 
   /*package*/ World__BehaviorDescriptor() {
@@ -99,11 +81,9 @@ public final class World__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((List<SNode>) getDirectNeighbors_id5cWYGer8wby(node, (SNode) parameters[0]));
-      case 1:
         return (T) ((List<SNode>) getDoorLinkedNeighbors_id5cWYGer8wd1(node, (SNode) parameters[0]));
-      case 2:
-        return (T) ((List<SNode>) getAllNeighbors_id5cWYGer8wdR(node, (SNode) parameters[0]));
+      case 1:
+        return (T) ((List<SNode>) getAllTiles_id4pgbmyJbF4F(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -139,5 +119,7 @@ public final class World__BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final class LINKS {
     /*package*/ static final SReferenceLink to_door$Lj_Q = MetaAdapterFactory.getReferenceLink(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d98L, 0x533cfac39ab91b34L, "to_door");
+    /*package*/ static final SContainmentLink grid$OnUt = MetaAdapterFactory.getContainmentLink(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4f578L, 0x698935b6d18cacadL, "grid");
+    /*package*/ static final SContainmentLink levels$yhqr = MetaAdapterFactory.getContainmentLink(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4eb00L, 0x2a240b133398ddL, "levels");
   }
 }

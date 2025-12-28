@@ -122,8 +122,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/7604668505107770501");
     b.version(3);
     b.property("Editor", 0x698935b6d18ceb7bL).type(PrimitiveTypeId.STRING).origin("7604668505107786619").done();
-    b.property("colNr", 0x533cfac39a738e47L).type(PrimitiveTypeId.INTEGER).origin("5997944521767489095").done();
-    b.property("rowNr", 0x533cfac39a738e48L).type(PrimitiveTypeId.INTEGER).origin("5997944521767489096").done();
+    b.property("colNr", 0x533cfac39b36f6faL).type(PrimitiveTypeId.INTEGER).origin("5997944521780295418").done();
+    b.property("rowNr", 0x533cfac39b36f6fbL).type(PrimitiveTypeId.INTEGER).origin("5997944521780295419").done();
     b.aggregate("tiles", 0x698935b6d18cac8eL).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL).optional(true).ordered(true).multiple(true).origin("7604668505107770510").done();
     return b.create();
   }
@@ -155,7 +155,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForLevel() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Level", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4f578L);
-    b.class_(false, false, true);
+    b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/7596248189345527160");
     b.version(3);

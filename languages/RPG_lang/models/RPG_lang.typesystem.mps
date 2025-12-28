@@ -14,6 +14,7 @@
     <import index="udcm" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.codeInspection.dataFlow.lang.ir(MPS.IDEA/)" />
     <import index="bj1v" ref="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)" />
     <import index="9fia" ref="r:48cf50db-7ea3-4b1e-ab16-c3d84cbcf0df(jetbrains.mps.lang.dataFlow.framework.instructions)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" implicit="true" />
     <import index="ayx2" ref="r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)" implicit="true" />
   </imports>
@@ -169,6 +170,31 @@
         </node>
       </node>
       <node concept="3clFbH" id="5cWYGeqYF3w" role="3cqZAp" />
+      <node concept="3cpWs8" id="4pgbmyJaCaN" role="3cqZAp">
+        <node concept="3cpWsn" id="4pgbmyJaCaQ" role="3cpWs9">
+          <property role="TrG5h" value="reachable" />
+          <node concept="2OqwBi" id="4pgbmyJaE9f" role="33vP2m">
+            <node concept="37vLTw" id="4pgbmyJaE1I" role="2Oq$k0">
+              <ref role="3cqZAo" node="5cWYGeqYEZl" resolve="p" />
+            </node>
+            <node concept="liA8E" id="4pgbmyJaErG" role="2OqNvi">
+              <ref role="37wK5l" to="8qxk:3yaa4ph8t_Y" resolve="analyze" />
+              <node concept="2ShNRf" id="4pgbmyJaEGN" role="37wK5m">
+                <node concept="HV5vD" id="4pgbmyJaGjU" role="2ShVmc">
+                  <property role="373rjd" value="true" />
+                  <ref role="HV5vE" to="ymjd:3yaa4ph8uSC" resolve="ReachabilityAnalyzer" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3uibUv" id="4pgbmyJaMPp" role="1tU5fm">
+            <ref role="3uigEE" to="8qxk:3yaa4ph8trJ" resolve="AnalysisResult" />
+            <node concept="3uibUv" id="4pgbmyJaNaI" role="11_B2D">
+              <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3SKdUt" id="5cWYGer0cTx" role="3cqZAp">
         <node concept="1PaTwC" id="5cWYGer0cTy" role="1aUNEU">
           <node concept="3oM_SD" id="5cWYGer0cTz" role="1PaTwD">
@@ -200,15 +226,30 @@
                 </node>
               </node>
             </node>
-            <node concept="3y3z36" id="5cWYGeqYI7l" role="3clFbw">
-              <node concept="10Nm6u" id="5cWYGeqYIfU" role="3uHU7w" />
-              <node concept="2OqwBi" id="5cWYGeqYHJE" role="3uHU7B">
-                <node concept="37vLTw" id="5cWYGer0aNm" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5cWYGeqZGNe" resolve="i" />
+            <node concept="1Wc70l" id="4pgbmyJaNiF" role="3clFbw">
+              <node concept="3fqX7Q" id="4pgbmyJaNqW" role="3uHU7w">
+                <node concept="2OqwBi" id="4pgbmyJaNAr" role="3fr31v">
+                  <node concept="37vLTw" id="4pgbmyJaNsg" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4pgbmyJaCaQ" resolve="reachable" />
+                  </node>
+                  <node concept="liA8E" id="4pgbmyJaObY" role="2OqNvi">
+                    <ref role="37wK5l" to="8qxk:3yaa4ph8tsB" resolve="get" />
+                    <node concept="37vLTw" id="4pgbmyJaOiT" role="37wK5m">
+                      <ref role="3cqZAo" node="5cWYGeqZGNe" resolve="i" />
+                    </node>
+                  </node>
                 </node>
-                <node concept="liA8E" id="5cWYGer0be9" role="2OqNvi">
-                  <ref role="37wK5l" to="9fia:3yaa4ph8tRD" resolve="getSource" />
+              </node>
+              <node concept="3y3z36" id="5cWYGeqYI7l" role="3uHU7B">
+                <node concept="2OqwBi" id="5cWYGeqYHJE" role="3uHU7B">
+                  <node concept="37vLTw" id="5cWYGer0aNm" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5cWYGeqZGNe" resolve="i" />
+                  </node>
+                  <node concept="liA8E" id="5cWYGer0be9" role="2OqNvi">
+                    <ref role="37wK5l" to="9fia:3yaa4ph8tRD" resolve="getSource" />
+                  </node>
                 </node>
+                <node concept="10Nm6u" id="5cWYGeqYIfU" role="3uHU7w" />
               </node>
             </node>
           </node>

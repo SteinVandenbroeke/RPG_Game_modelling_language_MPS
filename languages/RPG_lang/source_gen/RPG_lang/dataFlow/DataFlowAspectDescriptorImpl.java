@@ -20,22 +20,20 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
     switch (conceptIndex.index(cncpt)) {
       case 0:
-        return Collections.<IDataFlowBuilder>singletonList(new DoorTile_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new Grid_DataFlow());
       case 1:
-        return Collections.<IDataFlowBuilder>singletonList(new Item_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new Hero_DataFlow());
       case 2:
         return Collections.<IDataFlowBuilder>singletonList(new Key_DataFlow());
       case 3:
         return Collections.<IDataFlowBuilder>singletonList(new Level_DataFlow());
       case 4:
-        return Collections.<IDataFlowBuilder>singletonList(new StandardTile_DataFlow());
-      case 5:
         return Collections.<IDataFlowBuilder>singletonList(new Tile_DataFlow());
-      case 6:
+      case 5:
         return Collections.<IDataFlowBuilder>singletonList(new World_DataFlow());
       default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d98L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d6cL), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d9aL), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4f578L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d68L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4eb00L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39abcd3d8L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d9aL), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4f578L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4eb00L)).seal();
 }

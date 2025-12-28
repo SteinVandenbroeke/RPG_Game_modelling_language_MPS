@@ -17,11 +17,10 @@
       </concept>
       <concept id="7596248189345527160" name="RPG_lang.structure.Level" flags="ng" index="INVS3">
         <child id="7604668505107770541" name="grid" index="2S1p$r" />
-        <child id="5997944521772782578" name="monster" index="39Ya$L" />
       </concept>
       <concept id="7604668505107770501" name="RPG_lang.structure.Grid" flags="ng" index="2S1p$N">
-        <property id="5997944521767489095" name="colNr" index="39jRi4" />
-        <property id="5997944521767489096" name="rowNr" index="39jRib" />
+        <property id="5997944521780295419" name="rowNr" index="382wKS" />
+        <property id="5997944521780295418" name="colNr" index="382wKT" />
         <child id="7604668505107770510" name="tiles" index="2S1p$S" />
       </concept>
       <concept id="7604668505107770507" name="RPG_lang.structure.Tile" flags="ng" index="2S1p$X">
@@ -29,7 +28,6 @@
         <property id="5997944521771045489" name="rowNr" index="39_iyM" />
         <property id="5997944521771039275" name="refName" index="39_k3C" />
       </concept>
-      <concept id="5997944521772291030" name="RPG_lang.structure.Monster" flags="ng" index="39w2$l" />
       <concept id="5997944521772291032" name="RPG_lang.structure.Hero" flags="ng" index="39w2$r" />
       <concept id="5997944521769708954" name="RPG_lang.structure.Key" flags="ng" index="39Eptp" />
       <concept id="5997944521769708952" name="RPG_lang.structure.DoorTile" flags="ng" index="39Eptr">
@@ -46,94 +44,66 @@
       </concept>
     </language>
   </registry>
-  <node concept="INU1V" id="5cWYGeqKGz1">
+  <node concept="INU1V" id="4pgbmyJX0Gj">
     <property role="TrG5h" value="World" />
-    <node concept="INVS3" id="5cWYGeqKGz3" role="j6rNm">
-      <property role="TrG5h" value="L1" />
-      <node concept="2S1p$N" id="5cWYGeqKGz4" role="2S1p$r">
-        <property role="39jRib" value="2" />
-        <property role="39jRi4" value="2" />
-        <node concept="39EpuF" id="5cWYGeqKGze" role="2S1p$S">
-          <property role="39_k3C" value="L1[0,0]" />
-          <property role="39_iyE" value="0" />
-          <property role="39_iyM" value="0" />
-          <node concept="39Eptp" id="5cWYGeqKGzk" role="39EpuC">
-            <property role="TrG5h" value="k1" />
-          </node>
-        </node>
-        <node concept="39EpuF" id="5cWYGeqV05V" role="2S1p$S">
-          <property role="39_k3C" value="L1[1,0]" />
-          <property role="39_iyE" value="1" />
-          <property role="39_iyM" value="0" />
-          <node concept="39Eptp" id="5cWYGeqV05Y" role="39EpuC">
-            <property role="TrG5h" value="k2" />
-          </node>
-        </node>
-        <node concept="39Eptr" id="5cWYGeqKGzo" role="2S1p$S">
-          <property role="39_k3C" value="L1[0,1]" />
-          <property role="39_iyE" value="0" />
-          <property role="39_iyM" value="1" />
-          <ref role="39EptC" node="5cWYGeqKGzk" resolve="k1" />
-          <ref role="39xu7R" node="5cWYGeqKGzC" />
-        </node>
-      </node>
-      <node concept="39w2$l" id="5cWYGeqMAbT" role="39Ya$L">
-        <property role="INya4" value="10" />
-        <ref role="39zhFx" node="5cWYGeqKGze" />
-      </node>
-    </node>
-    <node concept="INVS3" id="5cWYGeqKGzu" role="j6rNm">
-      <property role="TrG5h" value="L2" />
-      <node concept="2S1p$N" id="5cWYGeqKGzv" role="2S1p$r">
-        <property role="39jRib" value="2" />
-        <property role="39jRi4" value="2" />
-        <node concept="39Eptr" id="5cWYGeqKGzC" role="2S1p$S">
-          <property role="39_k3C" value="L2[0,0]" />
-          <property role="39_iyE" value="0" />
-          <property role="39_iyM" value="0" />
-          <ref role="39EptC" node="5cWYGeqKGzk" resolve="k1" />
-          <ref role="39xu7R" node="5cWYGeqKGzo" />
-        </node>
-        <node concept="2S1p$X" id="5cWYGeqKGzU" role="2S1p$S" />
-      </node>
-      <node concept="39w2$l" id="5cWYGeqSBZF" role="39Ya$L">
-        <property role="INya4" value="3" />
-        <ref role="39zhFx" node="5cWYGeqKGzC" />
-      </node>
-    </node>
-    <node concept="INVS3" id="5cWYGeqStWS" role="j6rNm">
-      <property role="TrG5h" value="L3" />
-      <node concept="2S1p$N" id="5cWYGeqStWT" role="2S1p$r">
-        <property role="39jRib" value="3" />
-        <property role="39jRi4" value="3" />
-        <node concept="39EpuF" id="5cWYGeqStX3" role="2S1p$S">
-          <property role="39_k3C" value="L3[0,0]" />
-          <property role="39_iyE" value="0" />
-          <property role="39_iyM" value="0" />
-        </node>
-        <node concept="39EpuF" id="5cWYGeqStXe" role="2S1p$S">
-          <property role="39_k3C" value="L3[1,0]" />
-          <property role="39_iyE" value="1" />
-          <property role="39_iyM" value="0" />
-        </node>
-        <node concept="2S1p$X" id="5cWYGeqStXq" role="2S1p$S" />
-        <node concept="2S1p$X" id="5cWYGeqStXr" role="2S1p$S" />
-        <node concept="39Eptr" id="5cWYGeqStXo" role="2S1p$S">
-          <property role="39_k3C" value="L3[1,1]" />
-          <property role="39_iyE" value="1" />
-          <property role="39_iyM" value="1" />
-          <ref role="39EptC" node="5cWYGeqKGzk" resolve="k1" />
-          <ref role="39xu7R" node="5cWYGeqKGzo" />
-        </node>
-      </node>
-      <node concept="39w2$l" id="5cWYGeqSBZG" role="39Ya$L">
-        <property role="INya4" value="5" />
-        <ref role="39zhFx" node="5cWYGeqStXe" />
-      </node>
-    </node>
-    <node concept="39w2$r" id="5cWYGeqKGz2" role="ING5R">
+    <node concept="39w2$r" id="4pgbmyJX0Gk" role="ING5R">
       <property role="INya4" value="10" />
-      <ref role="39zhFx" node="5cWYGeqKGzo" />
+      <ref role="39zhFx" node="4pgbmyJX0GK" />
+    </node>
+    <node concept="INVS3" id="4pgbmyJX0Gl" role="j6rNm">
+      <property role="TrG5h" value="tEST" />
+      <node concept="2S1p$N" id="4pgbmyJX0Gm" role="2S1p$r">
+        <property role="382wKS" value="5" />
+        <property role="382wKT" value="5" />
+        <node concept="39Eptr" id="4pgbmyJX0GK" role="2S1p$S">
+          <property role="39_k3C" value="null[0,0]" />
+          <property role="39_iyE" value="0" />
+          <property role="39_iyM" value="0" />
+          <ref role="39EptC" node="4pgbmyJXzpG" resolve="k" />
+          <ref role="39xu7R" node="4pgbmyJXzqR" />
+        </node>
+        <node concept="2S1p$X" id="4pgbmyJXzpk" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzpl" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzpm" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzpn" role="2S1p$S" />
+        <node concept="39EpuF" id="4pgbmyJXzpi" role="2S1p$S">
+          <property role="39_k3C" value="tEST[0,1]" />
+          <property role="39_iyE" value="0" />
+          <property role="39_iyM" value="1" />
+          <node concept="39Eptp" id="4pgbmyJXzpG" role="39EpuC">
+            <property role="TrG5h" value="k" />
+          </node>
+        </node>
+        <node concept="2S1p$X" id="4pgbmyJXzqn" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqo" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqp" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqq" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqr" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqs" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqt" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqu" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqv" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqw" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqx" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqy" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzqz" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzq$" role="2S1p$S" />
+        <node concept="2S1p$X" id="4pgbmyJXzq_" role="2S1p$S" />
+      </node>
+    </node>
+    <node concept="INVS3" id="4pgbmyJXzqL" role="j6rNm">
+      <property role="TrG5h" value="Level 2" />
+      <node concept="2S1p$N" id="4pgbmyJXzqM" role="2S1p$r">
+        <property role="382wKS" value="2" />
+        <property role="382wKT" value="2" />
+        <node concept="39Eptr" id="4pgbmyJXzqR" role="2S1p$S">
+          <property role="39_k3C" value="Level 2[0,0]" />
+          <property role="39_iyE" value="0" />
+          <property role="39_iyM" value="0" />
+          <ref role="39EptC" node="4pgbmyJXzpG" resolve="k" />
+          <ref role="39xu7R" node="4pgbmyJX0GK" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

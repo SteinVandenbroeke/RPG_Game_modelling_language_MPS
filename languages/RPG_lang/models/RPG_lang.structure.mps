@@ -93,7 +93,6 @@
     <property role="TrG5h" value="Level" />
     <property role="34LRSv" value="Level" />
     <property role="R4oN_" value="Create a game level in a world" />
-    <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="6_FiRH7DflT" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />

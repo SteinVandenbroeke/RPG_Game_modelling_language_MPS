@@ -4,9 +4,37 @@ package RPG_lang.dataFlow;
 
 import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import RPG_lang.behavior.Tile__BehaviorDescriptor;
+import java.util.Objects;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import java.util.List;
+import RPG_lang.behavior.Grid__BehaviorDescriptor;
+import RPG_lang.behavior.World__BehaviorDescriptor;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class Tile_DataFlow extends DataFlowBuilder {
   public void build(final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitNop("r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5997944521779374899");
+    _context.getBuilder().emitNop("r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5066599508439211284");
+    ListSequence.fromList(Tile__BehaviorDescriptor.getItems_id4pgbmyJLiRR.invoke(_context.getNode())).visitAll((it) -> {
+      if (Objects.equals(SNodeOperations.getConcept(_context.getNode()), CONCEPTS.DoorTile$Z4)) {
+        _context.getBuilder().emitRead(it, "r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5066599508442231678");
+      }
+      _context.getBuilder().build((SNode) it);
+    });
+    SNode grid = (SNode) SNodeOperations.getParent(_context.getNode());
+    SNode world = (SNode) SNodeOperations.getParent(SNodeOperations.getParent(grid));
+    List<SNode> neighbors = Grid__BehaviorDescriptor.getDirectNeighbors_id5cWYGer5Gm7.invoke(grid, _context.getNode());
+    ListSequence.fromList(neighbors).addSequence(ListSequence.fromList(World__BehaviorDescriptor.getDoorLinkedNeighbors_id5cWYGer8wd1.invoke(world, _context.getNode())));
+    for (SNode neighbor : neighbors) {
+      _context.getBuilder().emitIfJump(_context.getBuilder().before(neighbor), "r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5066599508433622180");
+    }
+    _context.getBuilder().emitMayBeUnreachable(() -> _context.getBuilder().emitRet("r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5066599508433766927"));
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept DoorTile$Z4 = MetaAdapterFactory.getConcept(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d98L, "RPG_lang.structure.DoorTile");
   }
 }

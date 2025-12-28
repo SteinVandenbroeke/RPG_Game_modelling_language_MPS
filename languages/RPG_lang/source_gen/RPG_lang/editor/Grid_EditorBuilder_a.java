@@ -115,7 +115,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
   private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.rowNr$x8Mg;
+      final SProperty property = PROPS.rowNr$JqGt;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
       editorCell.setDefaultText("<no rowNr>");
@@ -152,7 +152,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
   private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.colNr$x8zf;
+      final SProperty property = PROPS.colNr$Jqts;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
       editorCell.setDefaultText("<no colNr>");
@@ -239,10 +239,10 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
         {
         }
         public int getSizeX() {
-          return SPropertyOperations.getInteger(node, PROPS.colNr$x8zf);
+          return SPropertyOperations.getInteger(node, PROPS.colNr$Jqts);
         }
         public int getSizeY() {
-          return SPropertyOperations.getInteger(node, PROPS.rowNr$x8Mg);
+          return SPropertyOperations.getInteger(node, PROPS.rowNr$JqGt);
         }
         public void loadElements() {
           final int sizeX = getSizeX();
@@ -374,7 +374,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
         }
 
         private Object queryCells(final SNode node, final int columnIndex, final int rowIndex) {
-          int index = rowIndex * SPropertyOperations.getInteger(node, PROPS.rowNr$x8Mg) + columnIndex;
+          int index = rowIndex * SPropertyOperations.getInteger(node, PROPS.rowNr$JqGt) + columnIndex;
           if (index < ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.tiles$sgk)).count()) {
             return SLinkOperations.getChildren(node, LINKS.tiles$sgk).get(index);
           } else {
@@ -385,7 +385,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
         public SNode doSubstituteNode(SNode node, int columnIndex, int rowIndex, int listIndex, EditorContext editorContext, SNode currentNode, SNode newValue) {
           currentNode = SNodeOperations.cast(currentNode, CONCEPTS.BaseConcept$gP);
           newValue = SNodeOperations.cast(newValue, CONCEPTS.BaseConcept$gP);
-          int index = rowIndex * SPropertyOperations.getInteger(node, PROPS.rowNr$x8Mg) + columnIndex;
+          int index = rowIndex * SPropertyOperations.getInteger(node, PROPS.rowNr$JqGt) + columnIndex;
 
           while (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.tiles$sgk)).count() <= index) {
             ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.tiles$sgk)).addElement(SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, "RPG_lang.structure.Tile")));
@@ -449,8 +449,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty rowNr$x8Mg = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x533cfac39a738e48L, "rowNr");
-    /*package*/ static final SProperty colNr$x8zf = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x533cfac39a738e47L, "colNr");
+    /*package*/ static final SProperty rowNr$JqGt = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x533cfac39b36f6fbL, "rowNr");
+    /*package*/ static final SProperty colNr$Jqts = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x533cfac39b36f6faL, "colNr");
     /*package*/ static final SProperty refName$iGG_ = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, 0x533cfac39aa9ba2bL, "refName");
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty colNr$uzx7 = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, 0x533cfac39aa9d269L, "colNr");

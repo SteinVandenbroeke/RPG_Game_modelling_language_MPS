@@ -5,8 +5,8 @@ package RPG_lang.dataFlow;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 
-public class Item_DataFlow extends DataFlowBuilder {
+public class Hero_DataFlow extends DataFlowBuilder {
   public void build(final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitNop("r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5997944521777789582");
+    _context.getBuilder().emitNop("r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5066599508431627313");
   }
 }

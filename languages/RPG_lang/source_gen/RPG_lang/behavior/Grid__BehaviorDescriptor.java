@@ -16,30 +16,45 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, "RPG_lang.structure.Grid");
 
   public static final SMethod<SNode> getTile_id5cWYGer5xL0 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTile").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(5997944521778142272L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2(SMethodBuilder.createJavaParameter(Integer.TYPE, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<Void> setTile_id4pgbmyJUs5a = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setTile").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(5066599508442988874L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
   public static final SMethod<List<SNode>> getDirectNeighbors_id5cWYGer5Gm7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getDirectNeighbors").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(5997944521778185607L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getAllTiles_id4pgbmyJgGQW = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAllTiles").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(5066599508432047548L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTile_id5cWYGer5xL0, getDirectNeighbors_id5cWYGer5Gm7);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTile_id5cWYGer5xL0, setTile_id4pgbmyJUs5a, getDirectNeighbors_id5cWYGer5Gm7, getAllTiles_id4pgbmyJgGQW);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static SNode getTile_id5cWYGer5xL0(@NotNull SNode __thisNode__, int row, int col) {
-    int index = row * SPropertyOperations.getInteger(__thisNode__, PROPS.rowNr$x8Mg) + col;
+    int index = row * SPropertyOperations.getInteger(__thisNode__, PROPS.rowNr$JqGt) + col;
     if (index < ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.tiles$sgk)).count()) {
-      return (SNode) SLinkOperations.getChildren(__thisNode__, LINKS.tiles$sgk).get(index);
+      SNode tile = (SNode) SLinkOperations.getChildren(__thisNode__, LINKS.tiles$sgk).get(index);
+      if (tile == null || SNodeOperations.getConcept(tile) == CONCEPTS.Tile$RT) {
+        return null;
+      }
+      return tile;
     } else {
       return null;
+    }
+  }
+  /*package*/ static void setTile_id4pgbmyJUs5a(@NotNull SNode __thisNode__, SNode tile, int old_index, int row, int col) {
+    int index = row * SPropertyOperations.getInteger(__thisNode__, PROPS.rowNr$JqGt) + col;
+    if (old_index != index) {
+      SLinkOperations.getChildren(__thisNode__, LINKS.tiles$sgk).set(index, tile);
+      SLinkOperations.getChildren(__thisNode__, LINKS.tiles$sgk).set(index, tile);
     }
   }
   /*package*/ static List<SNode> getDirectNeighbors_id5cWYGer5Gm7(@NotNull SNode __thisNode__, SNode tile) {
@@ -53,10 +68,21 @@ public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
     }
     List<SNode> directNeighbors = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(directNeighbors).addElement(Grid__BehaviorDescriptor.getTile_id5cWYGer5xL0.invoke(__thisNode__, ((int) (SPropertyOperations.getInteger(tile, PROPS.rowNr$u_pf) - 1)), ((int) SPropertyOperations.getInteger(tile, PROPS.colNr$uzx7))));
-    ListSequence.fromList(directNeighbors).addElement(Grid__BehaviorDescriptor.getTile_id5cWYGer5xL0.invoke(__thisNode__, ((int) SPropertyOperations.getInteger(tile, PROPS.rowNr$x8Mg)), ((int) (SPropertyOperations.getInteger(tile, PROPS.colNr$x8zf) - 1))));
-    ListSequence.fromList(directNeighbors).addElement(Grid__BehaviorDescriptor.getTile_id5cWYGer5xL0.invoke(__thisNode__, ((int) SPropertyOperations.getInteger(tile, PROPS.rowNr$x8Mg)), ((int) (SPropertyOperations.getInteger(tile, PROPS.colNr$uzx7) + 1))));
-    ListSequence.fromList(directNeighbors).addElement(Grid__BehaviorDescriptor.getTile_id5cWYGer5xL0.invoke(__thisNode__, ((int) (SPropertyOperations.getInteger(tile, PROPS.rowNr$x8Mg) + 1)), ((int) SPropertyOperations.getInteger(tile, PROPS.colNr$x8zf))));
+    ListSequence.fromList(directNeighbors).addElement(Grid__BehaviorDescriptor.getTile_id5cWYGer5xL0.invoke(__thisNode__, ((int) SPropertyOperations.getInteger(tile, PROPS.rowNr$u_pf)), ((int) (SPropertyOperations.getInteger(tile, PROPS.colNr$uzx7) - 1))));
+    ListSequence.fromList(directNeighbors).addElement(Grid__BehaviorDescriptor.getTile_id5cWYGer5xL0.invoke(__thisNode__, ((int) SPropertyOperations.getInteger(tile, PROPS.rowNr$u_pf)), ((int) (SPropertyOperations.getInteger(tile, PROPS.colNr$uzx7) + 1))));
+    ListSequence.fromList(directNeighbors).addElement(Grid__BehaviorDescriptor.getTile_id5cWYGer5xL0.invoke(__thisNode__, ((int) (SPropertyOperations.getInteger(tile, PROPS.rowNr$u_pf) + 1)), ((int) SPropertyOperations.getInteger(tile, PROPS.colNr$uzx7))));
+    ListSequence.fromList(directNeighbors).removeWhere((it) -> it == null);
     return directNeighbors;
+  }
+  /*package*/ static List<SNode> getAllTiles_id4pgbmyJgGQW(@NotNull SNode __thisNode__) {
+    List<SNode> allTiles = ListSequence.fromList(new ArrayList<SNode>());
+
+    for (int c = 0; c < SPropertyOperations.getInteger(__thisNode__, PROPS.colNr$Jqts); c++) {
+      for (int r = 0; r < SPropertyOperations.getInteger(__thisNode__, PROPS.rowNr$JqGt); r++) {
+        ListSequence.fromList(allTiles).addElement(Grid__BehaviorDescriptor.getTile_id5cWYGer5xL0.invoke(__thisNode__, ((int) r), ((int) c)));
+      }
+    }
+    return allTiles;
   }
 
   /*package*/ Grid__BehaviorDescriptor() {
@@ -77,7 +103,12 @@ public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
       case 0:
         return (T) ((SNode) getTile_id5cWYGer5xL0(node, ((int) (Integer) parameters[0]), ((int) (Integer) parameters[1])));
       case 1:
+        setTile_id4pgbmyJUs5a(node, (SNode) parameters[0], ((int) (Integer) parameters[1]), ((int) (Integer) parameters[2]), ((int) (Integer) parameters[3]));
+        return null;
+      case 2:
         return (T) ((List<SNode>) getDirectNeighbors_id5cWYGer5Gm7(node, (SNode) parameters[0]));
+      case 3:
+        return (T) ((List<SNode>) getAllTiles_id4pgbmyJgGQW(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -108,13 +139,17 @@ public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty rowNr$x8Mg = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x533cfac39a738e48L, "rowNr");
+    /*package*/ static final SProperty rowNr$JqGt = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x533cfac39b36f6fbL, "rowNr");
     /*package*/ static final SProperty rowNr$u_pf = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, 0x533cfac39aa9d271L, "rowNr");
     /*package*/ static final SProperty colNr$uzx7 = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, 0x533cfac39aa9d269L, "colNr");
-    /*package*/ static final SProperty colNr$x8zf = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x533cfac39a738e47L, "colNr");
+    /*package*/ static final SProperty colNr$Jqts = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x533cfac39b36f6faL, "colNr");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink tiles$sgk = MetaAdapterFactory.getContainmentLink(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x698935b6d18cac8eL, "tiles");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Tile$RT = MetaAdapterFactory.getConcept(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, "RPG_lang.structure.Tile");
   }
 }
