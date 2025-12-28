@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-148suj6greznlfnflbss788d6g20a3v">
-  <files names="ConstraintsAspectDescriptor.java" />
+<product version="3" modelHash="-5flsb7qdr5rfzfstvaczqwvd13gy9hu">
+  <files names="ConstraintsAspectDescriptor.java:Creature_Constraints.java:DoorTile_Constraints.java:Monster_Constraints.java" />
 </product>
 

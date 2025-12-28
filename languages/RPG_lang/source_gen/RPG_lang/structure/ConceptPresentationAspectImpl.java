@@ -10,11 +10,18 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Column;
+  private ConceptPresentation props_Creature;
+  private ConceptPresentation props_DoorTile;
   private ConceptPresentation props_Grid;
   private ConceptPresentation props_Hero;
+  private ConceptPresentation props_Item;
+  private ConceptPresentation props_Key;
   private ConceptPresentation props_Level;
+  private ConceptPresentation props_Monster;
   private ConceptPresentation props_Row;
+  private ConceptPresentation props_StandardTile;
   private ConceptPresentation props_Tile;
+  private ConceptPresentation props_TrapTile;
   private ConceptPresentation props_World;
 
   @Override
@@ -29,6 +36,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Column = cpb.create();
         }
         return props_Column;
+      case LanguageConceptSwitch.Creature:
+        if (props_Creature == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Creature = cpb.create();
+        }
+        return props_Creature;
+      case LanguageConceptSwitch.DoorTile:
+        if (props_DoorTile == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DoorTile");
+          props_DoorTile = cpb.create();
+        }
+        return props_DoorTile;
       case LanguageConceptSwitch.Grid:
         if (props_Grid == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -39,10 +59,24 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Hero:
         if (props_Hero == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Hero");
+          cpb.presentationByReference(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a569fcL, 0x533cfac39ab1e022L, "tileName", "", "");
           props_Hero = cpb.create();
         }
         return props_Hero;
+      case LanguageConceptSwitch.Item:
+        if (props_Item == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Item = cpb.create();
+        }
+        return props_Item;
+      case LanguageConceptSwitch.Key:
+        if (props_Key == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Key = cpb.create();
+        }
+        return props_Key;
       case LanguageConceptSwitch.Level:
         if (props_Level == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -51,6 +85,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Level = cpb.create();
         }
         return props_Level;
+      case LanguageConceptSwitch.Monster:
+        if (props_Monster == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a569fcL, 0x533cfac39ab1e022L, "tileName", "", "");
+          props_Monster = cpb.create();
+        }
+        return props_Monster;
       case LanguageConceptSwitch.Row:
         if (props_Row == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -58,13 +99,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Row = cpb.create();
         }
         return props_Row;
+      case LanguageConceptSwitch.StandardTile:
+        if (props_StandardTile == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StandardTile");
+          props_StandardTile = cpb.create();
+        }
+        return props_StandardTile;
       case LanguageConceptSwitch.Tile:
         if (props_Tile == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Tile");
+          cpb.rawPresentation("no tile");
           props_Tile = cpb.create();
         }
         return props_Tile;
+      case LanguageConceptSwitch.TrapTile:
+        if (props_TrapTile == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TrapTile");
+          props_TrapTile = cpb.create();
+        }
+        return props_TrapTile;
       case LanguageConceptSwitch.World:
         if (props_World == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

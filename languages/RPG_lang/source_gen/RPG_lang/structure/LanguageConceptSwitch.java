@@ -10,21 +10,35 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int Column = 0;
-  public static final int Grid = 1;
-  public static final int Hero = 2;
-  public static final int Level = 3;
-  public static final int Row = 4;
-  public static final int Tile = 5;
-  public static final int World = 6;
+  public static final int Creature = 1;
+  public static final int DoorTile = 2;
+  public static final int Grid = 3;
+  public static final int Hero = 4;
+  public static final int Item = 5;
+  public static final int Key = 6;
+  public static final int Level = 7;
+  public static final int Monster = 8;
+  public static final int Row = 9;
+  public static final int StandardTile = 10;
+  public static final int Tile = 11;
+  public static final int TrapTile = 12;
+  public static final int World = 13;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L);
     builder.put(0x698935b6d18cac89L, Column);
+    builder.put(0x696b4b7b47a569fcL, Creature);
+    builder.put(0x533cfac39a956d98L, DoorTile);
     builder.put(0x698935b6d18cac85L, Grid);
-    builder.put(0x696b4b7b47a569fcL, Hero);
+    builder.put(0x533cfac39abcd3d8L, Hero);
+    builder.put(0x533cfac39a956d6cL, Item);
+    builder.put(0x533cfac39a956d9aL, Key);
     builder.put(0x696b4b7b47a4f578L, Level);
+    builder.put(0x533cfac39abcd3d6L, Monster);
     builder.put(0x698935b6d18cac87L, Row);
+    builder.put(0x533cfac39a956d68L, StandardTile);
     builder.put(0x698935b6d18cac8bL, Tile);
+    builder.put(0x533cfac39a91cab5L, TrapTile);
     builder.put(0x696b4b7b47a4eb00L, World);
     myIndex = builder.seal();
   }

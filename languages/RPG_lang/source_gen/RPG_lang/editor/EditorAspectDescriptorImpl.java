@@ -8,6 +8,7 @@ import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -18,14 +19,22 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
     switch (conceptIndex.index(cncpt)) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new Grid_Editor());
+        return Collections.<ConceptEditor>singletonList(new Creature_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new Hero_Editor());
+        return Collections.<ConceptEditor>singletonList(new DoorTile_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new Level_Editor());
+        return Collections.<ConceptEditor>singletonList(new Grid_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new Tile_Editor());
+        return Collections.<ConceptEditor>singletonList(new Key_Editor());
       case 4:
+        return Collections.<ConceptEditor>singletonList(new Level_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new StandardTile_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new Tile_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new TrapTile_Editor());
+      case 8:
         return Collections.<ConceptEditor>singletonList(new World_Editor());
       default:
     }
@@ -33,6 +42,20 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex1.index(cncpt)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new Hero_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new Monster_SubstituteMenu());
+      default:
+    }
+    return Collections.<SubstituteMenu>emptyList();
+  }
 
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a569fcL), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4f578L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4eb00L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a569fcL), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d98L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d9aL), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4f578L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d68L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a91cab5L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4eb00L)).seal();
+  private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39abcd3d8L), MetaIdFactory.conceptId(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39abcd3d6L)).seal();
 }

@@ -1,8 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081855346303:jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="7,0,11,0" name="RPG_lang.typesystem.TypesystemDescriptor" />
+      <unit at="8,0,16,0" name="RPG_lang.typesystem.TypesystemDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:1b54dadd-398e-4254-ac29-ec742eb7d95f(RPG_lang.typesystem)/5997944521775392807">
+    <file name="TypesystemDescriptor.java">
+      <node id="5997944521775392807" at="10,5,11,91" concept="7" />
+      <node id="5997944521775392807" at="11,91,12,55" concept="3" />
+      <node id="5997944521775392807" at="9,33,13,5" concept="0" />
+      <scope id="5997944521775392807" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="5997944521775392807" />
+      </scope>
+    </file>
+    <file name="check_liveness_NonTypesystemRule.java">
+      <node id="5997944521776345044" at="27,118,28,45" concept="7" />
+      <node id="5997944521776345312" at="28,45,29,0" concept="10" />
+      <node id="5997944521776746081" at="29,0,30,18" concept="9" />
+      <node id="5997944521777037876" at="33,9,34,68" concept="7" />
+      <node id="5997944521777037876" at="34,68,35,230" concept="7" />
+      <node id="5997944521776748617" at="38,5,39,0" concept="10" />
+      <node id="5997944521776753498" at="39,0,40,24" concept="9" />
+      <node id="5997944521776761110" at="40,24,41,70" concept="7" />
+      <node id="5997944521776780551" at="41,70,42,0" concept="10" />
+      <node id="5997944521776789785" at="44,42,45,54" concept="7" />
+      <node id="5997944521776793060" at="45,54,46,0" concept="10" />
+      <node id="5997944521776793146" at="46,0,47,33" concept="7" />
+      <node id="5997944521776983478" at="48,43,49,49" concept="7" />
+      <node id="5997944521776816566" at="50,59,51,28" concept="3" />
+      <node id="5997944521776819666" at="51,28,52,18" concept="1" />
+      <node id="5997944521776819668" at="54,9,55,0" concept="10" />
+      <node id="5997944521777037336" at="57,11,58,70" concept="7" />
+      <node id="5997944521777037336" at="58,70,59,231" concept="7" />
+      <node id="5997944521776770226" at="63,5,64,0" concept="10" />
+      <node id="5997944521775392807" at="66,50,67,29" concept="8" />
+      <node id="5997944521775392807" at="69,68,70,102" concept="8" />
+      <node id="5997944521775392807" at="72,30,73,17" concept="8" />
+      <node id="5997944521775392807" at="77,0,78,0" concept="11" trace="World$k6" />
+      <node id="5997944521775392807" at="25,0,27,0" concept="2" trace="check_liveness_NonTypesystemRule#()V" />
+      <node id="5997944521775392807" at="66,0,69,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="5997944521775392807" at="69,0,72,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5997944521775392807" at="72,0,75,0" concept="6" trace="overrides#()Z" />
+      <node id="5997944521777037876" at="32,34,36,9" concept="0" />
+      <node id="5997944521776797771" at="49,49,53,11" concept="5" />
+      <node id="5997944521777037336" at="56,51,60,11" concept="0" />
+      <node id="5997944521776356093" at="31,47,37,7" concept="5" />
+      <node id="5997944521776823669" at="55,0,61,9" concept="5" />
+      <node id="5997944521776793474" at="47,33,54,9" concept="4" />
+      <node id="5997944521776345368" at="30,18,38,5" concept="4" />
+      <node id="5997944521776774128" at="43,47,62,7" concept="5" />
+      <node id="5997944521776774126" at="42,0,63,5" concept="4" />
+      <node id="5997944521775392807" at="27,0,66,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="5997944521775392807" at="25,45,25,45" />
+      <scope id="5997944521775392807" at="66,50,67,29" />
+      <scope id="5997944521775392807" at="69,68,70,102" />
+      <scope id="5997944521775392807" at="72,30,73,17" />
+      <scope id="5997944521775392807" at="25,0,27,0" />
+      <scope id="5997944521777037876" at="33,9,35,230">
+        <var name="_reporter_2309309498" id="5997944521777037876" />
+        <var name="errorTarget" id="5997944521777037876" />
+      </scope>
+      <scope id="5997944521776797773" at="50,59,52,18" />
+      <scope id="5997944521777037336" at="57,11,59,231">
+        <var name="_reporter_2309309498" id="5997944521777037336" />
+        <var name="errorTarget" id="5997944521777037336" />
+      </scope>
+      <scope id="5997944521775392807" at="66,0,69,0" />
+      <scope id="5997944521775392807" at="69,0,72,0">
+        <var name="argument" id="5997944521775392807" />
+      </scope>
+      <scope id="5997944521775392807" at="72,0,75,0" />
+      <scope id="5997944521776356095" at="32,34,36,9" />
+      <scope id="5997944521776823671" at="56,51,60,11" />
+      <scope id="5997944521776793476" at="48,43,53,11">
+        <var name="nextLiveVars" id="5997944521776983479" />
+      </scope>
+      <scope id="5997944521776345370" at="31,47,37,7" />
+      <scope id="5997944521776793474" at="47,33,54,9">
+        <var name="next" id="5997944521776793477" />
+      </scope>
+      <scope id="5997944521776345368" at="30,18,38,5">
+        <var name="i" id="5997944521776614606" />
+      </scope>
+      <scope id="5997944521776774129" at="44,42,61,9">
+        <var name="isNeeded" id="5997944521776793149" />
+        <var name="write" id="5997944521776789786" />
+      </scope>
+      <scope id="5997944521776774127" at="43,47,62,7" />
+      <scope id="5997944521776774126" at="42,0,63,5">
+        <var name="i" id="5997944521776774145" />
+      </scope>
+      <scope id="5997944521775392808" at="27,118,64,0">
+        <var name="p" id="5997944521776345045" />
+        <var name="result" id="5997944521776761111" />
+      </scope>
+      <scope id="5997944521775392807" at="27,0,66,0">
+        <var name="status" id="5997944521775392807" />
+        <var name="typeCheckingContext" id="5997944521775392807" />
+        <var name="world" id="5997944521775392807" />
+      </scope>
+      <unit id="5997944521775392807" at="76,0,79,0" name="RPG_lang.typesystem.check_liveness_NonTypesystemRule$CONCEPTS" />
+      <unit id="5997944521775392807" at="24,0,80,0" name="RPG_lang.typesystem.check_liveness_NonTypesystemRule" />
     </file>
   </root>
 </debug-info>

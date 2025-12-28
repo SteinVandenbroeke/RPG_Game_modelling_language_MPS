@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <root>
+    <file name="DataFlowAspectDescriptorImpl.java">
+      <unit at="15,0,42,0" name="RPG_lang.dataFlow.DataFlowAspectDescriptorImpl" />
+    </file>
+  </root>
+  <root nodeRef="r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5997944521775162147">
+    <file name="World_DataFlow.java">
+      <node id="5997944521777877515" at="16,60,17,143" concept="2" />
+      <node id="5997944521778130501" at="17,143,18,179" concept="0" />
+      <node id="5997944521775162147" at="22,0,23,0" concept="3" trace="hero$P5pr" />
+      <node id="5997944521775162147" at="23,0,24,0" concept="3" trace="tileName$VQi_" />
+      <node id="5997944521775162147" at="16,0,20,0" concept="1" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="5997944521775162149" at="16,60,18,179">
+        <var name="startTile" id="5997944521777877518" />
+      </scope>
+      <scope id="5997944521775162147" at="16,0,20,0">
+        <var name="_context" id="5997944521775162147" />
+      </scope>
+      <unit id="5997944521775162147" at="21,0,25,0" name="RPG_lang.dataFlow.World_DataFlow$LINKS" />
+      <unit id="5997944521775162147" at="15,0,26,0" name="RPG_lang.dataFlow.World_DataFlow" />
+    </file>
+  </root>
+  <root nodeRef="r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5997944521775165016">
+    <file name="Level_DataFlow.java">
+      <node id="5997944521777804971" at="13,60,14,104" concept="0" />
+      <node id="5997944521775165016" at="18,0,19,0" concept="3" trace="grid$OnUt" />
+      <node id="5997944521775165016" at="13,0,16,0" concept="1" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="5997944521775165018" at="13,60,14,104" />
+      <scope id="5997944521775165016" at="13,0,16,0">
+        <var name="_context" id="5997944521775165016" />
+      </scope>
+      <unit id="5997944521775165016" at="17,0,20,0" name="RPG_lang.dataFlow.Level_DataFlow$LINKS" />
+      <unit id="5997944521775165016" at="12,0,21,0" name="RPG_lang.dataFlow.Level_DataFlow" />
+    </file>
+  </root>
+  <root nodeRef="r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5997944521775253560">
+    <file name="Tile_DataFlow.java">
+      <node id="5997944521779374899" at="9,60,10,115" concept="0" />
+      <node id="5997944521775253560" at="9,0,12,0" concept="1" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="5997944521775253562" at="9,60,10,115" />
+      <scope id="5997944521775253560" at="9,0,12,0">
+        <var name="_context" id="5997944521775253560" />
+      </scope>
+      <unit id="5997944521775253560" at="8,0,13,0" name="RPG_lang.dataFlow.Tile_DataFlow" />
+    </file>
+  </root>
+  <root nodeRef="r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5997944521775253612">
+    <file name="DoorTile_DataFlow.java">
+      <node id="5997944521775255336" at="12,60,13,186" concept="0" />
+      <node id="5997944521775253612" at="17,0,18,0" concept="3" trace="needed_key$48$j" />
+      <node id="5997944521775253612" at="12,0,15,0" concept="1" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="5997944521775253614" at="12,60,13,186" />
+      <scope id="5997944521775253612" at="12,0,15,0">
+        <var name="_context" id="5997944521775253612" />
+      </scope>
+      <unit id="5997944521775253612" at="16,0,19,0" name="RPG_lang.dataFlow.DoorTile_DataFlow$LINKS" />
+      <unit id="5997944521775253612" at="11,0,20,0" name="RPG_lang.dataFlow.DoorTile_DataFlow" />
+    </file>
+  </root>
+  <root nodeRef="r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5997944521775257834">
+    <file name="StandardTile_DataFlow.java">
+      <node id="5997944521777356820" at="13,60,14,104" concept="0" />
+      <node id="5997944521775257834" at="18,0,19,0" concept="3" trace="item$3lTT" />
+      <node id="5997944521775257834" at="13,0,16,0" concept="1" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="5997944521775257836" at="13,60,14,104" />
+      <scope id="5997944521775257834" at="13,0,16,0">
+        <var name="_context" id="5997944521775257834" />
+      </scope>
+      <unit id="5997944521775257834" at="17,0,20,0" name="RPG_lang.dataFlow.StandardTile_DataFlow$LINKS" />
+      <unit id="5997944521775257834" at="12,0,21,0" name="RPG_lang.dataFlow.StandardTile_DataFlow" />
+    </file>
+  </root>
+  <root nodeRef="r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5997944521777209324">
+    <file name="Key_DataFlow.java">
+      <node id="5997944521777652259" at="9,60,10,115" concept="0" />
+      <node id="5997944521777351100" at="10,115,11,137" concept="0" />
+      <node id="5997944521777209324" at="9,0,13,0" concept="1" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="5997944521777209326" at="9,60,11,137" />
+      <scope id="5997944521777209324" at="9,0,13,0">
+        <var name="_context" id="5997944521777209324" />
+      </scope>
+      <unit id="5997944521777209324" at="8,0,14,0" name="RPG_lang.dataFlow.Key_DataFlow" />
+    </file>
+  </root>
+  <root nodeRef="r:399cec5c-55ee-4e86-a1c9-7d6ea326f3b3(RPG_lang.dataFlow)/5997944521777789555">
+    <file name="Item_DataFlow.java">
+      <node id="5997944521777789582" at="9,60,10,115" concept="0" />
+      <node id="5997944521777789555" at="9,0,12,0" concept="1" trace="build#(Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="5997944521777789557" at="9,60,10,115" />
+      <scope id="5997944521777789555" at="9,0,12,0">
+        <var name="_context" id="5997944521777789555" />
+      </scope>
+      <unit id="5997944521777789555" at="8,0,13,0" name="RPG_lang.dataFlow.Item_DataFlow" />
+    </file>
+  </root>
+</debug-info>
+

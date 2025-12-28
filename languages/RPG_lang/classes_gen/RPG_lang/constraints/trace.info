@@ -1,8 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="12,0,23,0" name="RPG_lang.constraints.ConstraintsAspectDescriptor" />
+      <unit at="15,0,36,0" name="RPG_lang.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:7b28e06a-1efb-4fcf-aa52-a50cfdf00da0(RPG_lang.constraints)/5997944521771842477">
+    <file name="Creature_Constraints.java">
+      <node id="5997944521771842477" at="25,82,26,45" concept="7" />
+      <node id="5997944521771847165" at="26,45,27,26" concept="1" />
+      <node id="5997944521771847165" at="31,54,32,57" concept="7" />
+      <node id="5997944521771847165" at="39,61,40,121" concept="4" />
+      <node id="5997944521771881182" at="43,78,44,137" concept="3" />
+      <node id="5997944521771890336" at="46,48,47,85" concept="3" />
+      <node id="5997944521771895138" at="47,85,48,93" concept="3" />
+      <node id="5997944521771917748" at="48,93,49,85" concept="3" />
+      <node id="5997944521771899340" at="49,85,50,55" concept="4" />
+      <node id="5997944521771842477" at="59,0,60,0" concept="6" trace="Creature$iS" />
+      <node id="5997944521771842477" at="60,0,61,0" concept="6" trace="Tile$RT" />
+      <node id="5997944521771842477" at="61,0,62,0" concept="6" trace="DoorTile$Z4" />
+      <node id="5997944521771842477" at="62,0,63,0" concept="6" trace="StandardTile$OX" />
+      <node id="5997944521771842477" at="63,0,64,0" concept="6" trace="TrapTile$Rh" />
+      <node id="5997944521771842477" at="67,0,68,0" concept="6" trace="tileName$VQi_" />
+      <node id="5997944521771847165" at="31,0,34,0" concept="0" trace="RD1#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptor;)V" />
+      <node id="5997944521771842477" at="25,0,29,0" concept="0" trace="Creature_Constraints#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptorInitContext;)V" />
+      <node id="5997944521771847165" at="38,0,42,0" concept="2" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5997944521771889039" at="46,0,52,0" concept="2" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5997944521771883018" at="44,137,52,12" concept="4" />
+      <node id="5997944521771847165" at="42,0,54,0" concept="2" trace="createScope#(Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="5997944521771847165" at="36,54,54,8" concept="4" />
+      <node id="5997944521771847165" at="34,0,56,0" concept="2" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <scope id="5997944521771847165" at="31,54,32,57" />
+      <scope id="5997944521771847165" at="39,61,40,121" />
+      <scope id="5997944521771842477" at="25,82,27,26" />
+      <scope id="5997944521771847165" at="31,0,34,0">
+        <var name="container" id="5997944521771847165" />
+      </scope>
+      <scope id="5997944521771842477" at="25,0,29,0">
+        <var name="initContext" id="5997944521771842477" />
+      </scope>
+      <scope id="5997944521771847165" at="38,0,42,0" />
+      <scope id="5997944521771889042" at="46,48,50,55">
+        <var name="isDoor" id="5997944521771890339" />
+        <var name="isStandard" id="5997944521771895141" />
+        <var name="isTrap" id="5997944521771917751" />
+      </scope>
+      <scope id="5997944521771889039" at="46,0,52,0">
+        <var name="n" id="5997944521771889157" />
+      </scope>
+      <scope id="5997944521771847165" at="43,78,52,12">
+        <var name="allTilesScope" id="5997944521771881185" />
+      </scope>
+      <scope id="5997944521771847165" at="42,0,54,0">
+        <var name="_context" id="5997944521771847165" />
+      </scope>
+      <scope id="5997944521771847165" at="36,54,54,8" />
+      <scope id="5997944521771847165" at="34,0,56,0" />
+      <unit id="5997944521771842477" at="66,0,69,0" name="RPG_lang.constraints.Creature_Constraints$LINKS" />
+      <unit id="5997944521771886537" at="45,21,52,11" name="RPG_lang.constraints.Creature_Constraints$RD1$1$1" />
+      <unit id="5997944521771842477" at="58,0,65,0" name="RPG_lang.constraints.Creature_Constraints$CONCEPTS" />
+      <unit id="5997944521771847165" at="37,17,54,7" name="RPG_lang.constraints.Creature_Constraints$RD1$1" />
+      <unit id="5997944521771847165" at="30,0,57,0" name="RPG_lang.constraints.Creature_Constraints$RD1" />
+      <unit id="5997944521771842477" at="24,0,70,0" name="RPG_lang.constraints.Creature_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:7b28e06a-1efb-4fcf-aa52-a50cfdf00da0(RPG_lang.constraints)/5997944521772245804">
+    <file name="DoorTile_Constraints.java">
+      <node id="5997944521772245804" at="25,82,26,45" concept="7" />
+      <node id="5997944521772247346" at="26,45,27,26" concept="1" />
+      <node id="5997944521772247346" at="31,54,32,56" concept="7" />
+      <node id="5997944521772247346" at="39,61,40,121" concept="4" />
+      <node id="5997944521772261946" at="43,78,44,141" concept="3" />
+      <node id="5997944521772268047" at="46,48,47,123" concept="3" />
+      <node id="5997944521772279950" at="47,123,48,33" concept="4" />
+      <node id="5997944521772245804" at="57,0,58,0" concept="6" trace="DoorTile$Z4" />
+      <node id="5997944521772245804" at="61,0,62,0" concept="6" trace="to_door$Lj_Q" />
+      <node id="5997944521772247346" at="31,0,34,0" concept="0" trace="RD1#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptor;)V" />
+      <node id="5997944521772245804" at="25,0,29,0" concept="0" trace="DoorTile_Constraints#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptorInitContext;)V" />
+      <node id="5997944521772247346" at="38,0,42,0" concept="2" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5997944521772267525" at="46,0,50,0" concept="2" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5997944521772263004" at="44,141,50,12" concept="4" />
+      <node id="5997944521772247346" at="42,0,52,0" concept="2" trace="createScope#(Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="5997944521772247346" at="36,54,52,8" concept="4" />
+      <node id="5997944521772247346" at="34,0,54,0" concept="2" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <scope id="5997944521772247346" at="31,54,32,56" />
+      <scope id="5997944521772247346" at="39,61,40,121" />
+      <scope id="5997944521772245804" at="25,82,27,26" />
+      <scope id="5997944521772267528" at="46,48,48,33">
+        <var name="isSameLevel" id="5997944521772268050" />
+      </scope>
+      <scope id="5997944521772247346" at="31,0,34,0">
+        <var name="container" id="5997944521772247346" />
+      </scope>
+      <scope id="5997944521772245804" at="25,0,29,0">
+        <var name="initContext" id="5997944521772245804" />
+      </scope>
+      <scope id="5997944521772247346" at="38,0,42,0" />
+      <scope id="5997944521772267525" at="46,0,50,0">
+        <var name="n" id="5997944521772270110" />
+      </scope>
+      <scope id="5997944521772247346" at="43,78,50,12">
+        <var name="allDoorsScope" id="5997944521772261949" />
+      </scope>
+      <scope id="5997944521772247346" at="42,0,52,0">
+        <var name="_context" id="5997944521772247346" />
+      </scope>
+      <scope id="5997944521772247346" at="36,54,52,8" />
+      <scope id="5997944521772247346" at="34,0,54,0" />
+      <unit id="5997944521772245804" at="56,0,59,0" name="RPG_lang.constraints.DoorTile_Constraints$CONCEPTS" />
+      <unit id="5997944521772245804" at="60,0,63,0" name="RPG_lang.constraints.DoorTile_Constraints$LINKS" />
+      <unit id="5997944521772266710" at="45,21,50,11" name="RPG_lang.constraints.DoorTile_Constraints$RD1$1$1" />
+      <unit id="5997944521772247346" at="37,17,52,7" name="RPG_lang.constraints.DoorTile_Constraints$RD1$1" />
+      <unit id="5997944521772247346" at="30,0,55,0" name="RPG_lang.constraints.DoorTile_Constraints$RD1" />
+      <unit id="5997944521772245804" at="24,0,64,0" name="RPG_lang.constraints.DoorTile_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:7b28e06a-1efb-4fcf-aa52-a50cfdf00da0(RPG_lang.constraints)/5997944521773391491">
+    <file name="Monster_Constraints.java">
+      <node id="5997944521773391491" at="25,81,26,44" concept="7" />
+      <node id="5997944521773391492" at="26,44,27,26" concept="1" />
+      <node id="5997944521773391492" at="31,54,32,57" concept="7" />
+      <node id="5997944521773391492" at="39,61,40,121" concept="4" />
+      <node id="5997944521773398063" at="43,78,44,132" concept="3" />
+      <node id="5997944521774102902" at="46,48,47,85" concept="3" />
+      <node id="5997944521774102909" at="47,85,48,93" concept="3" />
+      <node id="5997944521774102916" at="48,93,49,85" concept="3" />
+      <node id="5997944521774102269" at="49,85,50,0" concept="5" />
+      <node id="5997944521773413837" at="50,0,51,150" concept="3" />
+      <node id="5997944521774589935" at="51,150,52,73" concept="4" />
+      <node id="5997944521773391491" at="61,0,62,0" concept="6" trace="Monster$pw" />
+      <node id="5997944521773391491" at="62,0,63,0" concept="6" trace="Tile$RT" />
+      <node id="5997944521773391491" at="63,0,64,0" concept="6" trace="DoorTile$Z4" />
+      <node id="5997944521773391491" at="64,0,65,0" concept="6" trace="StandardTile$OX" />
+      <node id="5997944521773391491" at="65,0,66,0" concept="6" trace="TrapTile$Rh" />
+      <node id="5997944521773391491" at="69,0,70,0" concept="6" trace="tileName$VQi_" />
+      <node id="5997944521773391492" at="31,0,34,0" concept="0" trace="RD1#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptor;)V" />
+      <node id="5997944521773391491" at="25,0,29,0" concept="0" trace="Monster_Constraints#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptorInitContext;)V" />
+      <node id="5997944521773391492" at="38,0,42,0" concept="2" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5997944521773412632" at="46,0,54,0" concept="2" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5997944521773409086" at="44,132,54,12" concept="4" />
+      <node id="5997944521773391492" at="42,0,56,0" concept="2" trace="createScope#(Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="5997944521773391492" at="36,54,56,8" concept="4" />
+      <node id="5997944521773391492" at="34,0,58,0" concept="2" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <scope id="5997944521773391492" at="31,54,32,57" />
+      <scope id="5997944521773391492" at="39,61,40,121" />
+      <scope id="5997944521773391491" at="25,81,27,26" />
+      <scope id="5997944521773391492" at="31,0,34,0">
+        <var name="container" id="5997944521773391492" />
+      </scope>
+      <scope id="5997944521773391491" at="25,0,29,0">
+        <var name="initContext" id="5997944521773391491" />
+      </scope>
+      <scope id="5997944521773391492" at="38,0,42,0" />
+      <scope id="5997944521773412635" at="46,48,52,73">
+        <var name="isDoor" id="5997944521774102903" />
+        <var name="isSameLevel" id="5997944521773413840" />
+        <var name="isStandard" id="5997944521774102910" />
+        <var name="isTrap" id="5997944521774102917" />
+      </scope>
+      <scope id="5997944521773412632" at="46,0,54,0">
+        <var name="n" id="5997944521773413184" />
+      </scope>
+      <scope id="5997944521773391492" at="43,78,54,12">
+        <var name="allTiles" id="5997944521773398064" />
+      </scope>
+      <scope id="5997944521773391492" at="42,0,56,0">
+        <var name="_context" id="5997944521773391492" />
+      </scope>
+      <scope id="5997944521773391492" at="36,54,56,8" />
+      <scope id="5997944521773391492" at="34,0,58,0" />
+      <unit id="5997944521773391491" at="68,0,71,0" name="RPG_lang.constraints.Monster_Constraints$LINKS" />
+      <unit id="5997944521773391491" at="60,0,67,0" name="RPG_lang.constraints.Monster_Constraints$CONCEPTS" />
+      <unit id="5997944521773412067" at="45,21,54,11" name="RPG_lang.constraints.Monster_Constraints$RD1$1$1" />
+      <unit id="5997944521773391492" at="37,17,56,7" name="RPG_lang.constraints.Monster_Constraints$RD1$1" />
+      <unit id="5997944521773391492" at="30,0,59,0" name="RPG_lang.constraints.Monster_Constraints$RD1" />
+      <unit id="5997944521773391491" at="24,0,72,0" name="RPG_lang.constraints.Monster_Constraints" />
     </file>
   </root>
 </debug-info>

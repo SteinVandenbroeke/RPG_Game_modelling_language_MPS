@@ -14,11 +14,18 @@ import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptColumn = createDescriptorForColumn();
+  /*package*/ final ConceptDescriptor myConceptCreature = createDescriptorForCreature();
+  /*package*/ final ConceptDescriptor myConceptDoorTile = createDescriptorForDoorTile();
   /*package*/ final ConceptDescriptor myConceptGrid = createDescriptorForGrid();
   /*package*/ final ConceptDescriptor myConceptHero = createDescriptorForHero();
+  /*package*/ final ConceptDescriptor myConceptItem = createDescriptorForItem();
+  /*package*/ final ConceptDescriptor myConceptKey = createDescriptorForKey();
   /*package*/ final ConceptDescriptor myConceptLevel = createDescriptorForLevel();
+  /*package*/ final ConceptDescriptor myConceptMonster = createDescriptorForMonster();
   /*package*/ final ConceptDescriptor myConceptRow = createDescriptorForRow();
+  /*package*/ final ConceptDescriptor myConceptStandardTile = createDescriptorForStandardTile();
   /*package*/ final ConceptDescriptor myConceptTile = createDescriptorForTile();
+  /*package*/ final ConceptDescriptor myConceptTrapTile = createDescriptorForTrapTile();
   /*package*/ final ConceptDescriptor myConceptWorld = createDescriptorForWorld();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -34,7 +41,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptColumn, myConceptGrid, myConceptHero, myConceptLevel, myConceptRow, myConceptTile, myConceptWorld);
+    return Arrays.asList(myConceptColumn, myConceptCreature, myConceptDoorTile, myConceptGrid, myConceptHero, myConceptItem, myConceptKey, myConceptLevel, myConceptMonster, myConceptRow, myConceptStandardTile, myConceptTile, myConceptTrapTile, myConceptWorld);
   }
 
   @Override
@@ -43,16 +50,30 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.Column:
         return myConceptColumn;
+      case LanguageConceptSwitch.Creature:
+        return myConceptCreature;
+      case LanguageConceptSwitch.DoorTile:
+        return myConceptDoorTile;
       case LanguageConceptSwitch.Grid:
         return myConceptGrid;
       case LanguageConceptSwitch.Hero:
         return myConceptHero;
+      case LanguageConceptSwitch.Item:
+        return myConceptItem;
+      case LanguageConceptSwitch.Key:
+        return myConceptKey;
       case LanguageConceptSwitch.Level:
         return myConceptLevel;
+      case LanguageConceptSwitch.Monster:
+        return myConceptMonster;
       case LanguageConceptSwitch.Row:
         return myConceptRow;
+      case LanguageConceptSwitch.StandardTile:
+        return myConceptStandardTile;
       case LanguageConceptSwitch.Tile:
         return myConceptTile;
+      case LanguageConceptSwitch.TrapTile:
+        return myConceptTrapTile;
       case LanguageConceptSwitch.World:
         return myConceptWorld;
       default:
@@ -72,24 +93,64 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForGrid() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Grid", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L);
-    b.class_(false, false, true);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/7604668505107770501");
-    b.version(3);
-    b.property("Editor", 0x698935b6d18ceb7bL).type(PrimitiveTypeId.STRING).origin("7604668505107786619").done();
-    b.aggregate("tile", 0x698935b6d18cac8eL).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL).optional(true).ordered(true).multiple(true).origin("7604668505107770510").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForHero() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Hero", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a569fcL);
-    b.class_(false, false, false);
+  private static ConceptDescriptor createDescriptorForCreature() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Creature", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a569fcL);
+    b.class_(false, true, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11f8a0774f2L);
     b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/7596248189345556988");
     b.version(3);
     b.property("lives", 0x696b4b7b47a569ffL).type(PrimitiveTypeId.INTEGER).origin("7596248189345556991").done();
+    b.associate("tileName", 0x533cfac39ab1e022L).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL).optional(false).origin("5997944521771573282").done();
     b.alias("Hero");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForDoorTile() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "DoorTile", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d98L);
+    b.class_(false, false, false);
+    // extends: RPG_lang.structure.Tile
+    b.super_(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL);
+    b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/5997944521769708952");
+    b.version(3);
+    b.associate("needed_key", 0x533cfac39a956dabL).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d9aL).optional(false).origin("5997944521769708971").done();
+    b.associate("to_door", 0x533cfac39ab91b34L).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d98L).optional(false).origin("5997944521772047156").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForGrid() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Grid", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/7604668505107770501");
+    b.version(3);
+    b.property("Editor", 0x698935b6d18ceb7bL).type(PrimitiveTypeId.STRING).origin("7604668505107786619").done();
+    b.property("colNr", 0x533cfac39a738e47L).type(PrimitiveTypeId.INTEGER).origin("5997944521767489095").done();
+    b.property("rowNr", 0x533cfac39a738e48L).type(PrimitiveTypeId.INTEGER).origin("5997944521767489096").done();
+    b.aggregate("tiles", 0x698935b6d18cac8eL).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL).optional(true).ordered(true).multiple(true).origin("7604668505107770510").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForHero() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Hero", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39abcd3d8L);
+    b.class_(false, false, false);
+    // extends: RPG_lang.structure.Creature
+    b.super_(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a569fcL);
+    b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/5997944521772291032");
+    b.version(3);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForItem() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Item", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d6cL);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/5997944521769708908");
+    b.version(3);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForKey() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Key", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d9aL);
+    b.class_(false, false, false);
+    // extends: RPG_lang.structure.Item
+    b.super_(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d6cL);
+    b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/5997944521769708954");
+    b.version(3);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLevel() {
@@ -99,7 +160,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/7596248189345527160");
     b.version(3);
     b.aggregate("grid", 0x698935b6d18cacadL).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L).optional(false).ordered(true).multiple(false).origin("7604668505107770541").done();
+    b.aggregate("monster", 0x533cfac39ac453f2L).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39abcd3d6L).optional(true).ordered(true).multiple(false).origin("5997944521772782578").done();
     b.alias("Level");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMonster() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Monster", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39abcd3d6L);
+    b.class_(false, false, false);
+    // extends: RPG_lang.structure.Creature
+    b.super_(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a569fcL);
+    b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/5997944521772291030");
+    b.version(3);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForRow() {
@@ -110,12 +181,35 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("tile", 0x698935b6d18cac91L).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL).optional(true).ordered(true).multiple(false).origin("7604668505107770513").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForStandardTile() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "StandardTile", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d68L);
+    b.class_(false, false, false);
+    // extends: RPG_lang.structure.Tile
+    b.super_(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL);
+    b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/5997944521769708904");
+    b.version(3);
+    b.aggregate("item", 0x533cfac39a956d6bL).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d6cL).optional(true).ordered(true).multiple(false).origin("5997944521769708907").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForTile() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Tile", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL);
     b.class_(false, false, false);
     b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/7604668505107770507");
     b.version(3);
-    b.property("name", 0x698935b6d18cac93L).type(PrimitiveTypeId.STRING).origin("7604668505107770515").done();
+    b.property("refName", 0x533cfac39aa9ba2bL).type(PrimitiveTypeId.STRING).origin("5997944521771039275").done();
+    b.property("colNr", 0x533cfac39aa9d269L).type(PrimitiveTypeId.INTEGER).origin("5997944521771045481").done();
+    b.property("rowNr", 0x533cfac39aa9d271L).type(PrimitiveTypeId.INTEGER).origin("5997944521771045489").done();
+    b.alias("no tile");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTrapTile() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "TrapTile", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a91cab5L);
+    b.class_(false, false, false);
+    // extends: RPG_lang.structure.Tile
+    b.super_(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL);
+    b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/5997944521769470645");
+    b.version(3);
+    b.property("lives", 0x533cfac39a91cab7L).type(PrimitiveTypeId.INTEGER).origin("5997944521769470647").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForWorld() {
@@ -124,8 +218,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/7596248189345524480");
     b.version(3);
-    b.aggregate("Hero", 0x696b4b7b47a58a0cL).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a569fcL).optional(false).ordered(true).multiple(false).origin("7596248189345565196").done();
-    b.aggregate("Levels", 0x2a240b133398ddL).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4f578L).optional(true).ordered(true).multiple(true).origin("11861579007236317").done();
+    b.aggregate("hero", 0x696b4b7b47a58a0cL).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39abcd3d8L).optional(false).ordered(true).multiple(false).origin("7596248189345565196").done();
+    b.aggregate("levels", 0x2a240b133398ddL).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4f578L).optional(true).ordered(true).multiple(true).origin("11861579007236317").done();
     return b.create();
   }
 }
