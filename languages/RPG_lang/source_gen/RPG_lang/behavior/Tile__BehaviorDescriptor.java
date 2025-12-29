@@ -17,6 +17,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -28,8 +29,9 @@ public final class Tile__BehaviorDescriptor extends BaseBHDescriptor {
 
   public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(1213877396640L).languageId(0x9b92103b95ca8c0cL, 0xceab519525ea4f22L).build2();
   public static final SMethod<List<SNode>> getItems_id4pgbmyJLiRR = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getItems").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(5066599508440591863L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2();
+  public static final SMethod<String> getProcessedName_id3ruJhwZbBX1 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getProcessedName").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(3953805434714750785L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getItems_id4pgbmyJLiRR);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getItems_id4pgbmyJLiRR, getProcessedName_id3ruJhwZbBX1);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -40,6 +42,12 @@ public final class Tile__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static List<SNode> getItems_id4pgbmyJLiRR(@NotNull SNode __thisNode__) {
     return ListSequence.fromList(new ArrayList<>());
+  }
+  /*package*/ static String getProcessedName_id3ruJhwZbBX1(@NotNull SNode __thisNode__) {
+    SNode level = SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Level$rE, false, false);
+    String levelName = Level__BehaviorDescriptor.getProcessedName_id3ruJhwZbEQ3.invoke(level);
+    String tileName = "tile_" + levelName + "_" + SPropertyOperations.getInteger(__thisNode__, PROPS.colNr$uzx7) + "_" + SPropertyOperations.getInteger(__thisNode__, PROPS.rowNr$u_pf) + "_" + SNodeOperations.getConcept(__thisNode__).getName();
+    return tileName;
   }
 
   /*package*/ Tile__BehaviorDescriptor() {
@@ -61,6 +69,8 @@ public final class Tile__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((String) getPresentation_idhEwIMiw(node));
       case 1:
         return (T) ((List<SNode>) getItems_id4pgbmyJLiRR(node));
+      case 2:
+        return (T) ((String) getProcessedName_id3ruJhwZbBX1(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -92,9 +102,12 @@ public final class Tile__BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Tile$RT = MetaAdapterFactory.getConcept(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, "RPG_lang.structure.Tile");
+    /*package*/ static final SConcept Level$rE = MetaAdapterFactory.getConcept(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4f578L, "RPG_lang.structure.Level");
   }
 
   private static final class PROPS {
     /*package*/ static final SProperty refName$iGG_ = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, 0x533cfac39aa9ba2bL, "refName");
+    /*package*/ static final SProperty colNr$uzx7 = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, 0x533cfac39aa9d269L, "colNr");
+    /*package*/ static final SProperty rowNr$u_pf = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, 0x533cfac39aa9d271L, "rowNr");
   }
 }

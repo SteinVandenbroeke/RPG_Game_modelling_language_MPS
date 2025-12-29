@@ -39,8 +39,11 @@ public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static SNode getTile_id5cWYGer5xL0(@NotNull SNode __thisNode__, int row, int col) {
+    if (row < 0 || col < 0 || row >= SPropertyOperations.getInteger(__thisNode__, PROPS.rowNr$JqGt) || col >= SPropertyOperations.getInteger(__thisNode__, PROPS.colNr$Jqts)) {
+      return null;
+    }
     int index = row * SPropertyOperations.getInteger(__thisNode__, PROPS.rowNr$JqGt) + col;
-    if (index < ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.tiles$sgk)).count()) {
+    if (index < ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.tiles$sgk)).count() && index >= 0) {
       SNode tile = (SNode) SLinkOperations.getChildren(__thisNode__, LINKS.tiles$sgk).get(index);
       if (tile == null || SNodeOperations.getConcept(tile) == CONCEPTS.Tile$RT) {
         return null;
@@ -82,6 +85,8 @@ public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
         ListSequence.fromList(allTiles).addElement(Grid__BehaviorDescriptor.getTile_id5cWYGer5xL0.invoke(__thisNode__, ((int) r), ((int) c)));
       }
     }
+    ListSequence.fromList(allTiles).removeWhere((it) -> it == null);
+
     return allTiles;
   }
 
@@ -139,10 +144,10 @@ public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static final class PROPS {
+    /*package*/ static final SProperty colNr$Jqts = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x533cfac39b36f6faL, "colNr");
     /*package*/ static final SProperty rowNr$JqGt = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x533cfac39b36f6fbL, "rowNr");
     /*package*/ static final SProperty rowNr$u_pf = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, 0x533cfac39aa9d271L, "rowNr");
     /*package*/ static final SProperty colNr$uzx7 = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL, 0x533cfac39aa9d269L, "colNr");
-    /*package*/ static final SProperty colNr$Jqts = MetaAdapterFactory.getProperty(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac85L, 0x533cfac39b36f6faL, "colNr");
   }
 
   private static final class LINKS {

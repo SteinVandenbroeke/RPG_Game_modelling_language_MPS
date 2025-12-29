@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product version="3" modelHash="-eh279fwphxm7iweu9efbityj2ck135w">
+  <files names="Creature_TextGen.java:DoorTile_TextGen.java:Grid_TextGen.java:Item_TextGen.java:Level_TextGen.java:StandardTile_TextGen.java:TextGenAspectDescriptor.java:Tile_TextGen.java:TrapTile_TextGen.java:World_TextGen.java" />
+</product>
+

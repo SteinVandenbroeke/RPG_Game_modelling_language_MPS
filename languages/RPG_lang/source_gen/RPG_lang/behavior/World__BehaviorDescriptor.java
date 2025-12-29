@@ -17,20 +17,23 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class World__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4eb00L, "RPG_lang.structure.World");
 
   public static final SMethod<List<SNode>> getDoorLinkedNeighbors_id5cWYGer8wd1 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getDoorLinkedNeighbors").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(5997944521778922305L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<List<SNode>> getAllTiles_id4pgbmyJbF4F = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAllTiles").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(5066599508430729515L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2();
+  public static final SMethod<String> getProcessedName_id3ruJhwZEX3Q = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getProcessedName").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(3953805434722963702L).languageId(0xbab31d2f4ee9bb39L, 0x3ae3bfbd8089435bL).build2();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDoorLinkedNeighbors_id5cWYGer8wd1, getAllTiles_id4pgbmyJbF4F);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDoorLinkedNeighbors_id5cWYGer8wd1, getAllTiles_id4pgbmyJbF4F, getProcessedName_id3ruJhwZEX3Q);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -64,6 +67,10 @@ public final class World__BehaviorDescriptor extends BaseBHDescriptor {
 
     return allTiles;
   }
+  /*package*/ static String getProcessedName_id3ruJhwZEX3Q(@NotNull SNode __thisNode__) {
+    String Item = SPropertyOperations.getString(__thisNode__, PROPS.name$MnvL).replaceAll("[^A-Za-z0-9]", "");
+    return Item;
+  }
 
   /*package*/ World__BehaviorDescriptor() {
   }
@@ -84,6 +91,8 @@ public final class World__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((List<SNode>) getDoorLinkedNeighbors_id5cWYGer8wd1(node, (SNode) parameters[0]));
       case 1:
         return (T) ((List<SNode>) getAllTiles_id4pgbmyJbF4F(node));
+      case 2:
+        return (T) ((String) getProcessedName_id3ruJhwZEX3Q(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -121,5 +130,9 @@ public final class World__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SReferenceLink to_door$Lj_Q = MetaAdapterFactory.getReferenceLink(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x533cfac39a956d98L, 0x533cfac39ab91b34L, "to_door");
     /*package*/ static final SContainmentLink grid$OnUt = MetaAdapterFactory.getContainmentLink(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4f578L, 0x698935b6d18cacadL, "grid");
     /*package*/ static final SContainmentLink levels$yhqr = MetaAdapterFactory.getContainmentLink(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a4eb00L, 0x2a240b133398ddL, "levels");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
   }
 }

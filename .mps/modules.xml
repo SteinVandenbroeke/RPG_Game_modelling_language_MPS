@@ -4,6 +4,8 @@
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/RPG_lang.sandbox/RPG_lang.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/RPG_lang/RPG_lang.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/muMLUModel_lang.sandbox/muMLUModel_lang.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/muMLUModel_lang/muMLUModel_lang.mpl" folder="" />
     </projectModules>
   </component>
 </project>
