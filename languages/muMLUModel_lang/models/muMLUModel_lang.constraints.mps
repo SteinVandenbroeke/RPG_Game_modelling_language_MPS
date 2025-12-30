@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:66308ef5-52f3-4b92-814b-a5c5a67256b1(muMLUModel_lang.constraints)">
+<model ref="r:9c2c5ee1-6725-4e90-9177-1a68fbe612dd(muMLUModel_lang.constraints)">
   <persistence version="9" />
   <languages>
     <use id="5dae8159-ab99-46bb-a40d-0cee30ee7018" name="jetbrains.mps.lang.constraints.rules.kinds" version="0" />

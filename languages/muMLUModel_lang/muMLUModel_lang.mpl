@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="muMLUModel_lang" uuid="8fe54b23-21f5-4def-ac58-b238fd54820c" languageVersion="0" moduleVersion="0">
+<language namespace="muMLUModel_lang" uuid="908a38ac-acf7-4da5-a25c-2f36d744345a" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot path="${module}/models" />
@@ -12,7 +12,7 @@
   </facets>
   <accessoryModels />
   <generators>
-    <generator alias="main" namespace="muMLUModel_lang.generator" uuid="f6f0bbc5-54c6-4468-bf65-e0bea86d79d6">
+    <generator alias="main" namespace="muMLUModel_lang.generator" uuid="ff97ba91-3f96-4710-87e7-61a8ee5cb996">
       <models>
         <modelRoot contentPath="${module}/generator" type="default">
           <sourceRoot path="${module}/generator/templates" />
@@ -48,12 +48,16 @@
         <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
-        <module reference="8fe54b23-21f5-4def-ac58-b238fd54820c(muMLUModel_lang)" version="0" />
-        <module reference="f6f0bbc5-54c6-4468-bf65-e0bea86d79d6(muMLUModel_lang.generator)" version="0" />
+        <module reference="8fe54b23-21f5-4def-ac58-b238fd54820c(muMLUMetaModel_lang)" version="0" />
+        <module reference="908a38ac-acf7-4da5-a25c-2f36d744345a(muMLUModel_lang)" version="0" />
+        <module reference="ff97ba91-3f96-4710-87e7-61a8ee5cb996(muMLUModel_lang.generator)" version="0" />
       </dependencyVersions>
       <mapping-priorities />
     </generator>
   </generators>
+  <dependencies>
+    <dependency reexport="true">8fe54b23-21f5-4def-ac58-b238fd54820c(muMLUMetaModel_lang)</dependency>
+  </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="12" />
     <language slang="l:443f4c36-fcf5-4eb6-9500-8d06ed259e3e:jetbrains.mps.baseLanguage.classifiers" version="0" />
@@ -95,8 +99,11 @@
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />
-    <module reference="8fe54b23-21f5-4def-ac58-b238fd54820c(muMLUModel_lang)" version="0" />
+    <module reference="8fe54b23-21f5-4def-ac58-b238fd54820c(muMLUMetaModel_lang)" version="0" />
+    <module reference="908a38ac-acf7-4da5-a25c-2f36d744345a(muMLUModel_lang)" version="0" />
   </dependencyVersions>
-  <extendedLanguages />
+  <extendedLanguages>
+    <extendedLanguage>8fe54b23-21f5-4def-ac58-b238fd54820c(muMLUMetaModel_lang)</extendedLanguage>
+  </extendedLanguages>
 </language>
 

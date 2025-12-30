@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:94ec36c8-1595-401a-b2e6-217f3f27ffea(muMLUModel_lang.typesystem)">
+<model ref="r:2132c191-b8cf-4719-bb85-1bbc3d6b9fe9(muMLUModel_lang.typesystem)">
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="5" />

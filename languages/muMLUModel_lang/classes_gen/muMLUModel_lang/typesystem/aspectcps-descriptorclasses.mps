@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="00000000-0000-4000-5f02-5beb5f025beb/i:f20f9d0(checkpoints/muMLUModel_lang.typesystem@descriptorclasses)">
+<model ref="00000000-0000-4000-5f02-5beb5f025beb/i:f8b534a(checkpoints/muMLUModel_lang.typesystem@descriptorclasses)">
   <persistence version="9" />
   <attribute name="checkpoint" value="DescriptorClasses" />
   <attribute name="generation-plan" value="AspectCPS" />
   <attribute name="user-objects" value="true" />
   <languages />
   <imports>
-    <import index="2ibr" ref="r:94ec36c8-1595-401a-b2e6-217f3f27ffea(muMLUModel_lang.typesystem)" />
+    <import index="e47x" ref="r:2132c191-b8cf-4719-bb85-1bbc3d6b9fe9(muMLUModel_lang.typesystem)" />
     <import index="qurh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.typesystem.runtime(MPS.Core/)" />
   </imports>
   <registry>

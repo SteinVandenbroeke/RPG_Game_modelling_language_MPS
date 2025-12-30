@@ -241,11 +241,12 @@ World_state:WorldState{
 collectedpoints = 0;
 }
 Worldto_state:WorldStateToWorld(World_state -> World)
-C:Clock {time = 0}
+C:Clock {time = 0;}
 
 L1:Level{
 name = "L1";
 }
+World_L1:WorldToLevel (World -> L1)
 
 # All tiles #
 tile_L1_0_0_StandardTile:StandardTile
@@ -270,9 +271,6 @@ direction = "right";
 tile_L1_0_1_DoorTile_TO_tile_L1_0_0_StandardTile:TileToTile (tile_L1_0_1_DoorTile -> tile_L1_0_0_StandardTile){
 direction = "up";
 }
-tile_L1_0_1_DoorTile_TO_tile_L1_1_0_StandardTile:TileToTile (tile_L1_0_1_DoorTile -> tile_L1_1_0_StandardTile){
-direction = "left";
-}
 tile_L1_0_1_DoorTile_TO_tile_L1_1_1_TrapTile:TileToTile (tile_L1_0_1_DoorTile -> tile_L1_1_1_TrapTile){
 direction = "right";
 }
@@ -282,9 +280,6 @@ direction = "down";
 }
 tile_L1_1_0_StandardTile_TO_tile_L1_0_0_StandardTile:TileToTile (tile_L1_1_0_StandardTile -> tile_L1_0_0_StandardTile){
 direction = "left";
-}
-tile_L1_1_0_StandardTile_TO_tile_L1_0_1_DoorTile:TileToTile (tile_L1_1_0_StandardTile -> tile_L1_0_1_DoorTile){
-direction = "right";
 }
 # connections for tile_L1_1_1_TrapTile
 tile_L1_1_1_TrapTile_TO_tile_L1_1_0_StandardTile:TileToTile (tile_L1_1_1_TrapTile -> tile_L1_1_0_StandardTile){
@@ -298,10 +293,15 @@ L1_Monster:Monster{
 lives = 2;
 }
 L1_Monster_tile_L1_1_0_StandardTile:CreaturesTile (L1_Monster -> tile_L1_1_0_StandardTile)
-
+CS_L1_Monster:CreatureState {
+moved = False;
+fought = False;
+}
+CS_L1_Monster_L1_Monster:CreatureStateToCreature (CS_L1_Monster -> L1_Monster)
 L2:Level{
 name = "L2";
 }
+World_L2:WorldToLevel (World -> L2)
 
 # All tiles #
 tile_L2_0_0_DoorTile:Door
@@ -320,4 +320,8 @@ null_Hero:Hero{
 lives = 10;
 }
 null_Hero_tile_L1_0_0_StandardTile:CreaturesTile (null_Hero -> tile_L1_0_0_StandardTile)
-"""
+CS_null_Hero:CreatureState {
+moved = False;
+fought = False;
+}
+CS_null_Hero_null_Hero:CreatureStateToCreature (CS_null_Hero -> null_Hero)"""

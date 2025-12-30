@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="00000000-0000-4000-5f02-5beb5f025beb/i:f626784(checkpoints/muMLUModel_lang.constraints@descriptorclasses)">
+<model ref="00000000-0000-4000-5f02-5beb5f025beb/i:f004953(checkpoints/muMLUModel_lang.constraints@descriptorclasses)">
   <persistence version="9" />
   <attribute name="checkpoint" value="DescriptorClasses" />
   <attribute name="generation-plan" value="AspectCPS" />
   <attribute name="user-objects" value="true" />
   <languages />
   <imports>
-    <import index="jqxf" ref="r:66308ef5-52f3-4b92-814b-a5c5a67256b1(muMLUModel_lang.constraints)" />
+    <import index="6pqc" ref="r:9c2c5ee1-6725-4e90-9177-1a68fbe612dd(muMLUModel_lang.constraints)" />
     <import index="ze1i" ref="8e98f4e2-decf-4e97-bf80-9109e8b759ee/java:jetbrains.mps.smodel.runtime(jetbrains.mps.lang.constraints.rules.runtime/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />

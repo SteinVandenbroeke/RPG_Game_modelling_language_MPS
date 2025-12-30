@@ -6,7 +6,12 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import muMLUModel_lang.structure.ConceptPresentationAspectImpl;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.language.LanguageExtensions;
 
@@ -14,7 +19,7 @@ public class Language extends LanguageRuntime {
   private final SLanguageId myId;
 
   public Language() {
-    myId = SLanguageId.deserialize("8fe54b23-21f5-4def-ac58-b238fd54820c");
+    myId = SLanguageId.deserialize("908a38ac-acf7-4da5-a25c-2f36d744345a");
   }
 
   @Override
@@ -33,10 +38,20 @@ public class Language extends LanguageRuntime {
 
   @Override
   protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("8fe54b23-21f5-4def-ac58-b238fd54820c"), "muMLUMetaModel_lang"));
   }
 
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+    if (aspectClass == BehaviorAspectDescriptor.class) {
+      return aspectClass.cast(new muMLUModel_lang.behavior.BehaviorAspectDescriptor());
+    }
+    if (aspectClass == StructureAspectDescriptor.class) {
+      return aspectClass.cast(new muMLUModel_lang.structure.StructureAspectDescriptor());
+    }
+    if (aspectClass == ConceptPresentationAspect.class) {
+      return aspectClass.cast(new ConceptPresentationAspectImpl());
+    }
     return null;
   }
 
