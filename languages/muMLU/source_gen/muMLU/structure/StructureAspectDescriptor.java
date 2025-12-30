@@ -13,12 +13,13 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptAssociation = createDescriptorForAssociation();
   /*package*/ final ConceptDescriptor myConceptAttribute = createDescriptorForAttribute();
+  /*package*/ final ConceptDescriptor myConceptAttributeBoolean = createDescriptorForAttributeBoolean();
   /*package*/ final ConceptDescriptor myConceptAttributeInteger = createDescriptorForAttributeInteger();
   /*package*/ final ConceptDescriptor myConceptAttributeString = createDescriptorForAttributeString();
   /*package*/ final ConceptDescriptor myConceptAttributeType = createDescriptorForAttributeType();
   /*package*/ final ConceptDescriptor myConceptClass = createDescriptorForClass();
-  /*package*/ final ConceptDescriptor myConceptInheritance = createDescriptorForInheritance();
   /*package*/ final ConceptDescriptor myConceptModel = createDescriptorForModel();
   /*package*/ final ConceptDescriptor myConceptModelItem = createDescriptorForModelItem();
   private final LanguageConceptSwitch myIndexSwitch;
@@ -35,15 +36,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttribute, myConceptAttributeInteger, myConceptAttributeString, myConceptAttributeType, myConceptClass, myConceptInheritance, myConceptModel, myConceptModelItem);
+    return Arrays.asList(myConceptAssociation, myConceptAttribute, myConceptAttributeBoolean, myConceptAttributeInteger, myConceptAttributeString, myConceptAttributeType, myConceptClass, myConceptModel, myConceptModelItem);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
+      case LanguageConceptSwitch.Association:
+        return myConceptAssociation;
       case LanguageConceptSwitch.Attribute:
         return myConceptAttribute;
+      case LanguageConceptSwitch.AttributeBoolean:
+        return myConceptAttributeBoolean;
       case LanguageConceptSwitch.AttributeInteger:
         return myConceptAttributeInteger;
       case LanguageConceptSwitch.AttributeString:
@@ -52,8 +57,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAttributeType;
       case LanguageConceptSwitch.Class:
         return myConceptClass;
-      case LanguageConceptSwitch.Inheritance:
-        return myConceptInheritance;
       case LanguageConceptSwitch.Model:
         return myConceptModel;
       case LanguageConceptSwitch.ModelItem:
@@ -68,6 +71,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForAssociation() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("muMLU", "Association", 0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x6b83752c42752e8fL);
+    b.class_(false, false, true);
+    // extends: muMLU.structure.Class
+    b.super_(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L);
+    b.origin("r:5909a9dc-355f-40fe-b2c9-5fb5ff05c735(muMLU.structure)/7747164616961371791");
+    b.version(3);
+    b.associate("from_class", 0x6b83752c42752e91L).target(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L).optional(false).origin("7747164616961371793").done();
+    b.associate("to_class", 0x6b83752c42752e92L).target(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L).optional(false).origin("7747164616961371794").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForAttribute() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("muMLU", "Attribute", 0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c3L);
     b.class_(false, false, false);
@@ -76,7 +90,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("optional", 0x36debd183fc3e62bL).type(PrimitiveTypeId.BOOLEAN).origin("3953805434724541995").done();
     b.property("value", 0x36debd183ff0441bL).type(PrimitiveTypeId.STRING).origin("3953805434727449627").done();
+    b.property("defaultValue", 0x6b83752c4273e8e9L).type(PrimitiveTypeId.STRING).origin("7747164616961288425").done();
+    b.property("show", 0x6b83752c4273e8ecL).type(PrimitiveTypeId.BOOLEAN).origin("7747164616961288428").done();
     b.aggregate("type", 0x36debd184020af83L).target(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e632L).optional(false).ordered(true).multiple(false).origin("3953805434730622851").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForAttributeBoolean() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("muMLU", "AttributeBoolean", 0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x6b83752c42ce855fL);
+    b.class_(false, false, false);
+    // extends: muMLU.structure.AttributeType
+    b.super_(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e632L);
+    b.origin("r:5909a9dc-355f-40fe-b2c9-5fb5ff05c735(muMLU.structure)/7747164616967226719");
+    b.version(3);
+    b.alias("Boolean");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForAttributeInteger() {
@@ -114,20 +140,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:5909a9dc-355f-40fe-b2c9-5fb5ff05c735(muMLU.structure)/3953805434724535785");
     b.version(3);
     b.property("status", 0x36debd184002008bL).type(PrimitiveTypeId.INTEGER).origin("3953805434728611979").done();
-    b.associate("classType", 0x36debd183ff8e32cL).target(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L).optional(true).origin("3953805434728014636").done();
+    b.associate("parentClass", 0x36debd183ff8e32cL).target(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L).optional(true).origin("3953805434728014636").done();
+    b.associate("InheritanceClass", 0x6b83752c42798e6eL).target(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L).optional(true).origin("7747164616961658478").done();
     b.aggregate("attributes_def", 0x36debd183fee4ed5L).target(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c3L).optional(true).ordered(true).multiple(true).origin("3953805434727321301").done();
     b.aggregate("attributes", 0x36debd183ff9ed0eL).target(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c3L).optional(true).ordered(true).multiple(true).origin("3953805434728082702").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForInheritance() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("muMLU", "Inheritance", 0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c7L);
-    b.class_(false, false, false);
-    // extends: muMLU.structure.ModelItem
-    b.super_(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc4195aL);
-    b.origin("r:5909a9dc-355f-40fe-b2c9-5fb5ff05c735(muMLU.structure)/3953805434724541639");
-    b.version(3);
-    b.associate("subClass", 0x36debd183fc3e626L).target(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L).optional(false).origin("3953805434724541990").done();
-    b.associate("parentClass", 0x36debd183fc3e627L).target(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L).optional(false).origin("3953805434724541991").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForModel() {

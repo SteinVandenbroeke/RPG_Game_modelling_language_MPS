@@ -27,6 +27,19 @@ public class GetAtributes {
 
     };
   }
+  /*package*/ static AbstractCellAction createAction_COMPLETE_SMART(final SNode node) {
+    return new AbstractCellAction() {
+      public void execute(EditorContext editorContext) {
+        this.execute_internal(editorContext, node);
+      }
+      public void execute_internal(EditorContext editorContext, SNode node) {
+        SNode itemClass = (SNode) node;
+        Class__BehaviorDescriptor.updateAttributes_id3ruJhwZZA6n.invoke(itemClass);
+        editorContext.getEditorComponent().update();
+      }
+
+    };
+  }
 
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     CellAction originalDelete = editorCell.getAction(CellActionType.DELETE);
@@ -57,6 +70,7 @@ public class GetAtributes {
 
     // set cell actions defined directly in this action map
     editorCell.setAction(CellActionType.COMPLETE, createAction_COMPLETE(node));
+    editorCell.setAction(CellActionType.COMPLETE_SMART, createAction_COMPLETE_SMART(node));
   }
 
   public static void setDefinedCellActionsOfType(EditorCell editorCell, SNode node, EditorContext context, CellActionType actionType) {
@@ -66,6 +80,9 @@ public class GetAtributes {
     // set cell action of the given type defined directly in this action map
     if (Objects.equals(actionType, CellActionType.COMPLETE)) {
       editorCell.setAction(actionType, createAction_COMPLETE(node));
+    }
+    if (Objects.equals(actionType, CellActionType.COMPLETE_SMART)) {
+      editorCell.setAction(actionType, createAction_COMPLETE_SMART(node));
     }
   }
 }

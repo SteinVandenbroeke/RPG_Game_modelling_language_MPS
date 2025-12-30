@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -28,6 +28,7 @@ public final class Attribute__BehaviorDescriptor extends BaseBHDescriptor {
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_class_name_id3ruJhwZWlxx);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
+    SPropertyOperations.assign(__thisNode__, PROPS.show$h95e, false);
   }
 
   /*package*/ static String get_class_name_id3ruJhwZWlxx(@NotNull SNode __thisNode__) {
@@ -82,6 +83,7 @@ public final class Attribute__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static final class PROPS {
+    /*package*/ static final SProperty show$h95e = MetaAdapterFactory.getProperty(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c3L, 0x6b83752c4273e8ecL, "show");
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
   }
 }

@@ -1,8 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="12,0,23,0" name="muMLU.constraints.ConstraintsAspectDescriptor" />
+      <unit at="15,0,34,0" name="muMLU.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:43ae3813-c822-4f87-bb24-008ac68bf0ac(muMLU.constraints)/7747164616965056050">
+    <file name="Association_Constraints.java">
+      <node id="7747164616965056050" at="25,85,26,48" concept="6" />
+      <node id="7747164616965056204" at="26,48,27,26" concept="1" />
+      <node id="7747164616965056204" at="31,54,32,60" concept="6" />
+      <node id="7747164616965056204" at="39,61,40,118" concept="4" />
+      <node id="5997944521771881182" at="43,78,44,138" concept="3" />
+      <node id="5997944521771890336" at="46,48,47,96" concept="3" />
+      <node id="5997944521771899340" at="47,96,48,39" concept="4" />
+      <node id="7747164616965056050" at="57,0,58,0" concept="5" trace="Association$Uv" />
+      <node id="7747164616965056050" at="58,0,59,0" concept="5" trace="Class$Xc" />
+      <node id="7747164616965056050" at="62,0,63,0" concept="5" trace="parentClass$cInh" />
+      <node id="7747164616965056204" at="31,0,34,0" concept="0" trace="RD1#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptor;)V" />
+      <node id="7747164616965056050" at="25,0,29,0" concept="0" trace="Association_Constraints#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptorInitContext;)V" />
+      <node id="7747164616965056204" at="38,0,42,0" concept="2" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5997944521771889039" at="46,0,50,0" concept="2" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5997944521771883018" at="44,138,50,12" concept="4" />
+      <node id="7747164616965056204" at="42,0,52,0" concept="2" trace="createScope#(Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="7747164616965056204" at="36,54,52,8" concept="4" />
+      <node id="7747164616965056204" at="34,0,54,0" concept="2" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <scope id="7747164616965056204" at="31,54,32,60" />
+      <scope id="7747164616965056204" at="39,61,40,118" />
+      <scope id="7747164616965056050" at="25,85,27,26" />
+      <scope id="5997944521771889042" at="46,48,48,39">
+        <var name="isAssocsiation" id="5997944521771890339" />
+      </scope>
+      <scope id="7747164616965056204" at="31,0,34,0">
+        <var name="container" id="7747164616965056204" />
+      </scope>
+      <scope id="7747164616965056050" at="25,0,29,0">
+        <var name="initContext" id="7747164616965056050" />
+      </scope>
+      <scope id="7747164616965056204" at="38,0,42,0" />
+      <scope id="5997944521771889039" at="46,0,50,0">
+        <var name="n" id="5997944521771889157" />
+      </scope>
+      <scope id="7747164616965056204" at="43,78,50,12">
+        <var name="allTilesScope" id="5997944521771881185" />
+      </scope>
+      <scope id="7747164616965056204" at="42,0,52,0">
+        <var name="_context" id="7747164616965056204" />
+      </scope>
+      <scope id="7747164616965056204" at="36,54,52,8" />
+      <scope id="7747164616965056204" at="34,0,54,0" />
+      <unit id="7747164616965056050" at="61,0,64,0" name="muMLU.constraints.Association_Constraints$LINKS" />
+      <unit id="7747164616965056050" at="56,0,60,0" name="muMLU.constraints.Association_Constraints$CONCEPTS" />
+      <unit id="5997944521771886537" at="45,21,50,11" name="muMLU.constraints.Association_Constraints$RD1$1$1" />
+      <unit id="7747164616965056204" at="37,17,52,7" name="muMLU.constraints.Association_Constraints$RD1$1" />
+      <unit id="7747164616965056204" at="30,0,55,0" name="muMLU.constraints.Association_Constraints$RD1" />
+      <unit id="7747164616965056050" at="24,0,65,0" name="muMLU.constraints.Association_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:43ae3813-c822-4f87-bb24-008ac68bf0ac(muMLU.constraints)/7747164616967055637">
+    <file name="Class_Constraints.java">
+      <node id="7747164616967055637" at="27,79,28,42" concept="6" />
+      <node id="7747164616967055911" at="28,42,29,26" concept="1" />
+      <node id="7747164616967055911" at="33,54,34,60" concept="6" />
+      <node id="7747164616967055911" at="41,61,42,118" concept="4" />
+      <node id="7747164616967056205" at="45,78,46,138" concept="3" />
+      <node id="7747164616967056223" at="48,48,49,160" concept="3" />
+      <node id="7747164616967056230" at="49,160,50,28" concept="4" />
+      <node id="7747164616967055637" at="59,0,60,0" concept="5" trace="Class$Xc" />
+      <node id="7747164616967055637" at="63,0,64,0" concept="5" trace="parentClass$cInh" />
+      <node id="7747164616967055637" at="67,0,68,0" concept="5" trace="name$MnvL" />
+      <node id="7747164616967055911" at="33,0,36,0" concept="0" trace="RD1#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptor;)V" />
+      <node id="7747164616967055637" at="27,0,31,0" concept="0" trace="Class_Constraints#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptorInitContext;)V" />
+      <node id="7747164616967055911" at="40,0,44,0" concept="2" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="7747164616967056221" at="48,0,52,0" concept="2" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7747164616967056215" at="46,138,52,12" concept="4" />
+      <node id="7747164616967055911" at="44,0,54,0" concept="2" trace="createScope#(Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="7747164616967055911" at="38,54,54,8" concept="4" />
+      <node id="7747164616967055911" at="36,0,56,0" concept="2" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <scope id="7747164616967055911" at="33,54,34,60" />
+      <scope id="7747164616967055911" at="41,61,42,118" />
+      <scope id="7747164616967055637" at="27,79,29,26" />
+      <scope id="7747164616967056222" at="48,48,50,28">
+        <var name="isSelf" id="7747164616967056224" />
+      </scope>
+      <scope id="7747164616967055911" at="33,0,36,0">
+        <var name="container" id="7747164616967055911" />
+      </scope>
+      <scope id="7747164616967055637" at="27,0,31,0">
+        <var name="initContext" id="7747164616967055637" />
+      </scope>
+      <scope id="7747164616967055911" at="40,0,44,0" />
+      <scope id="7747164616967056221" at="48,0,52,0">
+        <var name="n" id="7747164616967056235" />
+      </scope>
+      <scope id="7747164616967055911" at="45,78,52,12">
+        <var name="allTilesScope" id="7747164616967056206" />
+      </scope>
+      <scope id="7747164616967055911" at="44,0,54,0">
+        <var name="_context" id="7747164616967055911" />
+      </scope>
+      <scope id="7747164616967055911" at="38,54,54,8" />
+      <scope id="7747164616967055911" at="36,0,56,0" />
+      <unit id="7747164616967055637" at="58,0,61,0" name="muMLU.constraints.Class_Constraints$CONCEPTS" />
+      <unit id="7747164616967055637" at="62,0,65,0" name="muMLU.constraints.Class_Constraints$LINKS" />
+      <unit id="7747164616967055637" at="66,0,69,0" name="muMLU.constraints.Class_Constraints$PROPS" />
+      <unit id="7747164616967056218" at="47,21,52,11" name="muMLU.constraints.Class_Constraints$RD1$1$1" />
+      <unit id="7747164616967055911" at="39,17,54,7" name="muMLU.constraints.Class_Constraints$RD1$1" />
+      <unit id="7747164616967055911" at="32,0,57,0" name="muMLU.constraints.Class_Constraints$RD1" />
+      <unit id="7747164616967055637" at="26,0,70,0" name="muMLU.constraints.Class_Constraints" />
     </file>
   </root>
 </debug-info>

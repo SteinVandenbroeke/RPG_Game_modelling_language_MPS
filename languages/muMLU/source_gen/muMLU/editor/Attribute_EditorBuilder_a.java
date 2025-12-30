@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
@@ -98,6 +99,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_mc4j88_a0a");
     Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(MPSColors.cyan));
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
@@ -210,6 +212,9 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 
     private EditorCell createComponent_0() {
       EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(MPSColors.orange));
+      editorCell.getStyle().putAll(style);
       return editorCell;
     }
   }
@@ -246,6 +251,9 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
   private EditorCell createConstant_7() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "name");
     editorCell.setCellId("Constant_mc4j88_b1a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(MPSColors.orange));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -297,6 +305,9 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
   private EditorCell createConstant_10() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "optional ");
     editorCell.setCellId("Constant_mc4j88_b2a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(MPSColors.orange));
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

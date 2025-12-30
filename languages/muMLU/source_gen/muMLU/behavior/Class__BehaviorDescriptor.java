@@ -36,7 +36,7 @@ public final class Class__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static void updateAttributes_id3ruJhwZZA6n(@NotNull SNode __thisNode__) {
-    for (SNode attribute : SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.classType$cInh), LINKS.attributes_def$bvxG)) {
+    for (SNode attribute : SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.parentClass$cInh), LINKS.attributes_def$bvxG)) {
       SNode new_attribute = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c3L, "muMLU.structure.Attribute"));
       SPropertyOperations.assign(new_attribute, PROPS.name$MnvL, SPropertyOperations.getString(attribute, PROPS.name$MnvL));
       SPropertyOperations.assign(new_attribute, PROPS.value$apC3, SPropertyOperations.getString(attribute, PROPS.value$apC3));
@@ -101,7 +101,7 @@ public final class Class__BehaviorDescriptor extends BaseBHDescriptor {
   private static final class LINKS {
     /*package*/ static final SContainmentLink type$HmUn = MetaAdapterFactory.getContainmentLink(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c3L, 0x36debd184020af83L, "type");
     /*package*/ static final SContainmentLink attributes$8nUU = MetaAdapterFactory.getContainmentLink(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L, 0x36debd183ff9ed0eL, "attributes");
-    /*package*/ static final SReferenceLink classType$cInh = MetaAdapterFactory.getReferenceLink(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L, 0x36debd183ff8e32cL, "classType");
+    /*package*/ static final SReferenceLink parentClass$cInh = MetaAdapterFactory.getReferenceLink(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L, 0x36debd183ff8e32cL, "parentClass");
     /*package*/ static final SContainmentLink attributes_def$bvxG = MetaAdapterFactory.getContainmentLink(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L, 0x36debd183fee4ed5L, "attributes_def");
   }
 }

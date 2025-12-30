@@ -5,7 +5,8 @@
       <modulePath path="$PROJECT_DIR$/languages/RPG_lang.sandbox/RPG_lang.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/RPG_lang/RPG_lang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/muMLU/muMLU.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/muMLU.sandbox/muMLU.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/muMLU.mm_rpg/muMLU.mm_rpg.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/muMLU.rt.mm.rpg/muMLU.rt.mm.rpg.msd" folder="" />
     </projectModules>
   </component>
 </project>

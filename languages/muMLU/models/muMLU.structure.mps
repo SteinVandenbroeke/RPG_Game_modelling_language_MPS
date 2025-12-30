@@ -59,6 +59,16 @@
       <property role="TrG5h" value="value" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+    <node concept="1TJgyi" id="6I3tiL2sYzD" role="1TKVEl">
+      <property role="IQ2nx" value="7747164616961288425" />
+      <property role="TrG5h" value="defaultValue" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="6I3tiL2sYzG" role="1TKVEl">
+      <property role="IQ2nx" value="7747164616961288428" />
+      <property role="TrG5h" value="show" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="PrWs8" id="3ruJhwZW4gp" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -109,30 +119,18 @@
     </node>
     <node concept="1TJgyj" id="3ruJhwZYecG" role="1TKVEi">
       <property role="IQ2ns" value="3953805434728014636" />
-      <property role="20kJfa" value="classType" />
+      <property role="20kJfa" value="parentClass" />
+      <ref role="20lvS9" node="3ruJhwZKWRD" resolve="Class" />
+    </node>
+    <node concept="1TJgyj" id="6I3tiL2uoTI" role="1TKVEi">
+      <property role="IQ2ns" value="7747164616961658478" />
+      <property role="20kJfa" value="InheritanceClass" />
       <ref role="20lvS9" node="3ruJhwZKWRD" resolve="Class" />
     </node>
     <node concept="1TJgyi" id="3ruJhx00w2b" role="1TKVEl">
       <property role="IQ2nx" value="3953805434728611979" />
       <property role="TrG5h" value="status" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="3ruJhwZKYj7">
-    <property role="EcuMT" value="3953805434724541639" />
-    <property role="TrG5h" value="Inheritance" />
-    <ref role="1TJDcQ" node="3ruJhwZL1_q" resolve="ModelItem" />
-    <node concept="1TJgyj" id="3ruJhwZKYoA" role="1TKVEi">
-      <property role="IQ2ns" value="3953805434724541990" />
-      <property role="20kJfa" value="subClass" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="3ruJhwZKWRD" resolve="Class" />
-    </node>
-    <node concept="1TJgyj" id="3ruJhwZKYoB" role="1TKVEi">
-      <property role="IQ2ns" value="3953805434724541991" />
-      <property role="20kJfa" value="parentClass" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="3ruJhwZKWRD" resolve="Class" />
     </node>
   </node>
   <node concept="1TIwiD" id="3ruJhwZKYiY">
@@ -156,6 +154,30 @@
     <node concept="PrWs8" id="3ruJhwZL1_H" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="6I3tiL2tiUf">
+    <property role="EcuMT" value="7747164616961371791" />
+    <property role="TrG5h" value="Association" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="3ruJhwZKWRD" resolve="Class" />
+    <node concept="1TJgyj" id="6I3tiL2tiUh" role="1TKVEi">
+      <property role="IQ2ns" value="7747164616961371793" />
+      <property role="20kJfa" value="from_class" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3ruJhwZKWRD" resolve="Class" />
+    </node>
+    <node concept="1TJgyj" id="6I3tiL2tiUi" role="1TKVEi">
+      <property role="IQ2ns" value="7747164616961371794" />
+      <property role="20kJfa" value="to_class" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3ruJhwZKWRD" resolve="Class" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6I3tiL2NClv">
+    <property role="EcuMT" value="7747164616967226719" />
+    <property role="TrG5h" value="AttributeBoolean" />
+    <property role="34LRSv" value="Boolean" />
+    <ref role="1TJDcQ" node="3ruJhwZKYoM" resolve="AttributeType" />
   </node>
 </model>
 

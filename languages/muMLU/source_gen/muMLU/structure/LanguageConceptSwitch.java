@@ -9,23 +9,25 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int Attribute = 0;
-  public static final int AttributeInteger = 1;
-  public static final int AttributeString = 2;
-  public static final int AttributeType = 3;
-  public static final int Class = 4;
-  public static final int Inheritance = 5;
-  public static final int Model = 6;
-  public static final int ModelItem = 7;
+  public static final int Association = 0;
+  public static final int Attribute = 1;
+  public static final int AttributeBoolean = 2;
+  public static final int AttributeInteger = 3;
+  public static final int AttributeString = 4;
+  public static final int AttributeType = 5;
+  public static final int Class = 6;
+  public static final int Model = 7;
+  public static final int ModelItem = 8;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL);
+    builder.put(0x6b83752c42752e8fL, Association);
     builder.put(0x36debd183fc3e4c3L, Attribute);
+    builder.put(0x6b83752c42ce855fL, AttributeBoolean);
     builder.put(0x36debd183fc3e636L, AttributeInteger);
     builder.put(0x36debd183fc3e62fL, AttributeString);
     builder.put(0x36debd183fc3e632L, AttributeType);
     builder.put(0x36debd183fc3cde9L, Class);
-    builder.put(0x36debd183fc3e4c7L, Inheritance);
     builder.put(0x36debd183fc3e4beL, Model);
     builder.put(0x36debd183fc4195aL, ModelItem);
     myIndex = builder.seal();

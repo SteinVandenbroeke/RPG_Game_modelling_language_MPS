@@ -9,12 +9,13 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_Association;
   private ConceptPresentation props_Attribute;
+  private ConceptPresentation props_AttributeBoolean;
   private ConceptPresentation props_AttributeInteger;
   private ConceptPresentation props_AttributeString;
   private ConceptPresentation props_AttributeType;
   private ConceptPresentation props_Class;
-  private ConceptPresentation props_Inheritance;
   private ConceptPresentation props_Model;
   private ConceptPresentation props_ModelItem;
 
@@ -23,6 +24,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Association:
+        if (props_Association == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Association = cpb.create();
+        }
+        return props_Association;
       case LanguageConceptSwitch.Attribute:
         if (props_Attribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -30,6 +38,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Attribute = cpb.create();
         }
         return props_Attribute;
+      case LanguageConceptSwitch.AttributeBoolean:
+        if (props_AttributeBoolean == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Boolean");
+          props_AttributeBoolean = cpb.create();
+        }
+        return props_AttributeBoolean;
       case LanguageConceptSwitch.AttributeInteger:
         if (props_AttributeInteger == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -57,13 +72,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Class = cpb.create();
         }
         return props_Class;
-      case LanguageConceptSwitch.Inheritance:
-        if (props_Inheritance == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_Inheritance = cpb.create();
-        }
-        return props_Inheritance;
       case LanguageConceptSwitch.Model:
         if (props_Model == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
