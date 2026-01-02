@@ -1,0 +1,12 @@
+Test:Creatures{
+lives = 10;
+}
+
+test:Clock{
+time = 0;
+}
+
+doorToDoor:doorToDoor(Test -> Test){
+
+}
+

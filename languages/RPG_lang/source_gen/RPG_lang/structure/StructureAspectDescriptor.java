@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptColumn = createDescriptorForColumn();
   /*package*/ final ConceptDescriptor myConceptCreature = createDescriptorForCreature();
   /*package*/ final ConceptDescriptor myConceptDoorTile = createDescriptorForDoorTile();
   /*package*/ final ConceptDescriptor myConceptGrid = createDescriptorForGrid();
@@ -22,7 +21,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptKey = createDescriptorForKey();
   /*package*/ final ConceptDescriptor myConceptLevel = createDescriptorForLevel();
   /*package*/ final ConceptDescriptor myConceptMonster = createDescriptorForMonster();
-  /*package*/ final ConceptDescriptor myConceptRow = createDescriptorForRow();
   /*package*/ final ConceptDescriptor myConceptStandardTile = createDescriptorForStandardTile();
   /*package*/ final ConceptDescriptor myConceptTile = createDescriptorForTile();
   /*package*/ final ConceptDescriptor myConceptTrapTile = createDescriptorForTrapTile();
@@ -41,15 +39,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptColumn, myConceptCreature, myConceptDoorTile, myConceptGrid, myConceptHero, myConceptItem, myConceptKey, myConceptLevel, myConceptMonster, myConceptRow, myConceptStandardTile, myConceptTile, myConceptTrapTile, myConceptWorld);
+    return Arrays.asList(myConceptCreature, myConceptDoorTile, myConceptGrid, myConceptHero, myConceptItem, myConceptKey, myConceptLevel, myConceptMonster, myConceptStandardTile, myConceptTile, myConceptTrapTile, myConceptWorld);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
-      case LanguageConceptSwitch.Column:
-        return myConceptColumn;
       case LanguageConceptSwitch.Creature:
         return myConceptCreature;
       case LanguageConceptSwitch.DoorTile:
@@ -66,8 +62,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptLevel;
       case LanguageConceptSwitch.Monster:
         return myConceptMonster;
-      case LanguageConceptSwitch.Row:
-        return myConceptRow;
       case LanguageConceptSwitch.StandardTile:
         return myConceptStandardTile;
       case LanguageConceptSwitch.Tile:
@@ -86,13 +80,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForColumn() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Column", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac89L);
-    b.class_(false, false, false);
-    b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/7604668505107770505");
-    b.version(3);
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForCreature() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Creature", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a569fcL);
     b.class_(false, true, false);
@@ -171,14 +158,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x696b4b7b47a569fcL);
     b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/5997944521772291030");
     b.version(3);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForRow() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("RPG_lang", "Row", 0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac87L);
-    b.class_(false, false, false);
-    b.origin("r:f13a84ac-7857-46e0-9ad0-6118f1254a12(RPG_lang.structure)/7604668505107770503");
-    b.version(3);
-    b.aggregate("tile", 0x698935b6d18cac91L).target(0x3ae3bfbd8089435bL, 0xbab31d2f4ee9bb39L, 0x698935b6d18cac8bL).optional(true).ordered(true).multiple(false).origin("7604668505107770513").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForStandardTile() {

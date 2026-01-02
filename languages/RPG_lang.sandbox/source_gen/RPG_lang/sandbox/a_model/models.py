@@ -316,12 +316,17 @@ tile_L1_0_1_DoorTile_TO_k1:DoorToKey (tile_L1_0_1_DoorTile -> k1)
 tile_L2_0_0_DoorTile_TO_tile_L1_0_1_DoorTile:DoorToDoor (tile_L2_0_0_DoorTile -> tile_L1_0_1_DoorTile)
 tile_L2_0_0_DoorTile_TO_k1:DoorToKey (tile_L2_0_0_DoorTile -> k1)
 
-null_Hero:Hero{
-lives = 10;
-}
-null_Hero_tile_L1_0_0_StandardTile:CreaturesTile (null_Hero -> tile_L1_0_0_StandardTile)
-CS_null_Hero:CreatureState {
-moved = False;
-fought = False;
-}
-CS_null_Hero_null_Hero:CreatureStateToCreature (CS_null_Hero -> null_Hero)"""
+test:Hero:Class:???{
+}{
+lower_cardinality = 1;upper_cardinality = 1;abstract = ;constraint = "";lower_cardinality = ;upper_cardinality = ;abstract = ;constraint = "";lower_cardinality = ;upper_cardinality = ;abstract = ;constraint = "";lower_cardinality = ;upper_cardinality = ;}:Inheritance (Hero -> Creatures:Class:???{
+}{
+abstract = True;constraint = " ```
+            get_slot_value(this, "lives") >= 0
+        ```";}Creatures_abstract (Creatures -> Integer {
+name = "abstract";
+optional = "false";
+Creatures_constraint (Creatures -> String {
+name = "constraint";
+optional = "false";
+{
+}"""

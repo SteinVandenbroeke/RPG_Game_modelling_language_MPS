@@ -12,6 +12,8 @@
   </facets>
   <accessoryModels>
     <model modelUID="r:577ca491-c890-4069-82d8-0f8f33211bbe(muMLU.base)" />
+    <model modelUID="r:378e18ae-945b-4ab1-b03f-a3a25ce2d994(muMLU.mm_rpg)" />
+    <model modelUID="r:ed1bc9a1-0a89-450c-ab85-991010242a4b(muMLU.rt_mm_rpg)" />
   </accessoryModels>
   <generators>
     <generator alias="main" namespace="muMLU.generator" uuid="ceb95625-98bc-45d1-a6fc-f1cbc291a85c">
@@ -96,6 +98,7 @@
     <language slang="l:1a8554c4-eb84-43ba-8c34-6f0d90c6e75a:jetbrains.mps.lang.smodel.query" version="3" />
     <language slang="l:c72da2b9-7cce-4447-8389-f407dc1158b7:jetbrains.mps.lang.structure" version="9" />
     <language slang="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" version="0" />
+    <language slang="l:b83431fe-5c8f-40bc-8a36-65e25f4dd253:jetbrains.mps.lang.textGen" version="1" />
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
     <language slang="l:7a5dda62-9140-4668-ab76-d5ed1746f2b2:jetbrains.mps.lang.typesystem" version="5" />
     <language slang="l:8bb9e0a2-a578-45d1-a319-4ebbe771fc6e:muMLU" version="0" />

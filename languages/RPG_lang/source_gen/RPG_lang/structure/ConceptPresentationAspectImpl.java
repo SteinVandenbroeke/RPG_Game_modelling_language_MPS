@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_Column;
   private ConceptPresentation props_Creature;
   private ConceptPresentation props_DoorTile;
   private ConceptPresentation props_Grid;
@@ -18,7 +17,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Key;
   private ConceptPresentation props_Level;
   private ConceptPresentation props_Monster;
-  private ConceptPresentation props_Row;
   private ConceptPresentation props_StandardTile;
   private ConceptPresentation props_Tile;
   private ConceptPresentation props_TrapTile;
@@ -29,13 +27,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.Column:
-        if (props_Column == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Column");
-          props_Column = cpb.create();
-        }
-        return props_Column;
       case LanguageConceptSwitch.Creature:
         if (props_Creature == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -92,13 +83,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Monster = cpb.create();
         }
         return props_Monster;
-      case LanguageConceptSwitch.Row:
-        if (props_Row == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Row");
-          props_Row = cpb.create();
-        }
-        return props_Row;
       case LanguageConceptSwitch.StandardTile:
         if (props_StandardTile == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

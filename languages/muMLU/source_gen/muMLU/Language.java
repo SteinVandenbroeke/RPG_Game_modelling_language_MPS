@@ -13,6 +13,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import muMLU.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor;
 import muMLU.migration.MigrationDescriptor;
+import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import muMLU.structure.ConceptPresentationAspectImpl;
@@ -57,6 +58,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == MigrationAspectDescriptor.class) {
       return aspectClass.cast(new MigrationDescriptor());
+    }
+    if (aspectClass == TextGenAspectDescriptor.class) {
+      return aspectClass.cast(new muMLU.textGen.TextGenAspectDescriptor());
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return aspectClass.cast(new muMLU.structure.StructureAspectDescriptor());
