@@ -58,6 +58,14 @@
       <ref role="DX_IX" node="3P8$igJNr8s" resolve="Test" />
       <ref role="DX_IY" node="3P8$igJNr8s" resolve="Test" />
     </node>
+    <node concept="97n3L" id="3P8$igJVDmY" role="97lBo">
+      <property role="TrG5h" value="H1" />
+      <ref role="99_SO" to="fdpl:6I3tiL2vv2j" resolve="Hero" />
+      <node concept="97lBr" id="3P8$igJVDn2" role="99P0m">
+        <property role="TrG5h" value="lives" />
+        <node concept="97lGI" id="3P8$igJVDn3" role="1QZxar" />
+      </node>
+    </node>
   </node>
 </model>
 

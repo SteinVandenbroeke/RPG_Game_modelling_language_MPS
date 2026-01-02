@@ -10,3 +10,7 @@ doorToDoor:doorToDoor(Test -> Test){
 
 }
 
+H1:Hero{
+lives = ;
+}
+

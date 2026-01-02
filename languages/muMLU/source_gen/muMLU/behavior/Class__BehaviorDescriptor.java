@@ -6,37 +6,46 @@ import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class Class__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L, "muMLU.structure.Class");
 
+  public static final SMethod<List<SNode>> getAttributesRecursive_id3P8$igJRMjB = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAttributesRecursive").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(4415939019244774631L).languageId(0xa3194ebbe771fc6eL, 0x8bb9e0a2a57845d1L).build2();
   public static final SMethod<Void> updateAttributes_id3ruJhwZZA6n = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateAttributes").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(3953805434728374679L).languageId(0xa3194ebbe771fc6eL, 0x8bb9e0a2a57845d1L).build2();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(updateAttributes_id3ruJhwZZA6n);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getAttributesRecursive_id3P8$igJRMjB, updateAttributes_id3ruJhwZZA6n);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  /*package*/ static List<SNode> getAttributesRecursive_id3P8$igJRMjB(@NotNull SNode __thisNode__) {
+    List<SNode> allAttributes = SLinkOperations.getChildren(__thisNode__, LINKS.attributes_def$bvxG);
+    if (SLinkOperations.getTarget(__thisNode__, LINKS.InheritanceClass$BelF) != null) {
+      List<SNode> parentAttributes = Class__BehaviorDescriptor.getAttributesRecursive_id3P8$igJRMjB.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.InheritanceClass$BelF));
+      allAttributes = ListSequence.fromList(allAttributes).concat(ListSequence.fromList(parentAttributes)).toList();
+    }
+    return allAttributes;
+  }
   /*package*/ static void updateAttributes_id3ruJhwZZA6n(@NotNull SNode __thisNode__) {
-    for (SNode attribute : SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.parentClass$cInh), LINKS.attributes_def$bvxG)) {
+    for (SNode attribute : Class__BehaviorDescriptor.getAttributesRecursive_id3P8$igJRMjB.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.parentClass$cInh))) {
       SNode new_attribute = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c3L, "muMLU.structure.Attribute"));
       SPropertyOperations.assign(new_attribute, PROPS.name$MnvL, SPropertyOperations.getString(attribute, PROPS.name$MnvL));
       SPropertyOperations.assign(new_attribute, PROPS.value$apC3, SPropertyOperations.getString(attribute, PROPS.value$apC3));
@@ -62,6 +71,8 @@ public final class Class__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
+        return (T) ((List<SNode>) getAttributesRecursive_id3P8$igJRMjB(node));
+      case 1:
         updateAttributes_id3ruJhwZZA6n(node);
         return null;
       default:
@@ -93,15 +104,16 @@ public final class Class__BehaviorDescriptor extends BaseBHDescriptor {
     return CONCEPT;
   }
 
-  private static final class PROPS {
-    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    /*package*/ static final SProperty value$apC3 = MetaAdapterFactory.getProperty(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c3L, 0x36debd183ff0441bL, "value");
-  }
-
   private static final class LINKS {
+    /*package*/ static final SContainmentLink attributes_def$bvxG = MetaAdapterFactory.getContainmentLink(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L, 0x36debd183fee4ed5L, "attributes_def");
+    /*package*/ static final SReferenceLink InheritanceClass$BelF = MetaAdapterFactory.getReferenceLink(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L, 0x6b83752c42798e6eL, "InheritanceClass");
     /*package*/ static final SContainmentLink type$HmUn = MetaAdapterFactory.getContainmentLink(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c3L, 0x36debd184020af83L, "type");
     /*package*/ static final SContainmentLink attributes$8nUU = MetaAdapterFactory.getContainmentLink(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L, 0x36debd183ff9ed0eL, "attributes");
     /*package*/ static final SReferenceLink parentClass$cInh = MetaAdapterFactory.getReferenceLink(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L, 0x36debd183ff8e32cL, "parentClass");
-    /*package*/ static final SContainmentLink attributes_def$bvxG = MetaAdapterFactory.getContainmentLink(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3cde9L, 0x36debd183fee4ed5L, "attributes_def");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    /*package*/ static final SProperty value$apC3 = MetaAdapterFactory.getProperty(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c3L, 0x36debd183ff0441bL, "value");
   }
 }
