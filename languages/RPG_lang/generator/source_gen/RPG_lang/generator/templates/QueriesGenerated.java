@@ -31,12 +31,16 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetValue_1_2(final PropertyMacroContext _context) {
     return Creature__BehaviorDescriptor.getProcessedName_id3ruJhwZvA6J.invoke(_context.getNode()) + "_state";
   }
+  public static Object propertyMacro_GetValue_1_3(final PropertyMacroContext _context) {
+    return Creature__BehaviorDescriptor.getProcessedName_id3ruJhwZvA6J.invoke(_context.getNode()) + "_" + Creature__BehaviorDescriptor.getProcessedName_id3ruJhwZvA6J.invoke(_context.getNode()) + "_state";
+  }
   private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
   {
     int i = 0;
     pvqMethods.put("4415939019245803380", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "H"));
     pvqMethods.put("4415939019245870054", new PVQ(i++, MetaAdapterFactory.getProperty(0x8bb9e0a2a57845d1L, 0xa3194ebbe771fc6eL, 0x36debd183fc3e4c3L, 0x36debd183ff0441bL, "value"), "lives"));
     pvqMethods.put("4415939019245844809", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "HS"));
+    pvqMethods.put("4415939019246464517", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CS_H"));
   }
   @NotNull
   @Override
@@ -59,6 +63,8 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetValue_1_1(ctx);
         case 2:
           return QueriesGenerated.propertyMacro_GetValue_1_2(ctx);
+        case 3:
+          return QueriesGenerated.propertyMacro_GetValue_1_3(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

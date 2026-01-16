@@ -113,12 +113,6 @@
         <ref role="v9R2y" node="4_2A0Q4JZJq" resolve="reduce_Hero" />
       </node>
     </node>
-    <node concept="3aamgX" id="3P8$igJYd8W" role="3acgRq">
-      <ref role="30HIoZ" to="ayx2:5cWYGeqJdfm" resolve="Monster" />
-      <node concept="j$656" id="3P8$igJYd8X" role="1lVwrX">
-        <ref role="v9R2y" node="3P8$igJYd8U" resolve="reduce_Monster" />
-      </node>
-    </node>
   </node>
   <node concept="13MO4I" id="4_2A0Q4JZJq">
     <property role="TrG5h" value="reduce_Hero" />
@@ -248,11 +242,6 @@
         </node>
       </node>
     </node>
-  </node>
-  <node concept="13MO4I" id="3P8$igJYd8U">
-    <property role="TrG5h" value="reduce_Monster" />
-    <ref role="3gUMe" to="ayx2:5cWYGeqJdfm" resolve="Monster" />
-    <node concept="2VYdi" id="3P8$igJYd8V" role="13RCb5" />
   </node>
 </model>
 
